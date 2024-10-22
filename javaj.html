@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #B0C4DE;
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      font-size: 18px;
+      color: #007bff;
+      position: relative;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+    label:hover::after {
+      width: 100%;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+    input[type="checkbox"]:checked + label + .content {
+      display: block;
+    }
+    h1,h2{
+        color: #2C3E50;
+    }
+    code {
+        background-color: #f4f4f4;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    
+    <h1>Java Programming notes</h1>
+    <p>Java is a high-level, object-oriented programming language developed by Sun Microsystems (now part of Oracle Corporation) and released in 1995. It is designed to be platform-independent, meaning that code written in Java can run on any device that has a Java Virtual Machine (JVM). Here are some key features and concepts:<br><br>
+
+        <b>Platform Independence:</b> Java programs are compiled into bytecode, which can be executed on any platform with a compatible JVM, allowing for the "write once, run anywhere" (WORA) principle.<br><br>
+        
+        <b>Object-Oriented:</b> Java is based on the principles of object-oriented programming (OOP), which promotes code reuse and modularity. It uses concepts like classes, objects, inheritance, polymorphism, and encapsulation.<br><br>
+        
+        <b>Rich API:</b> Java provides a comprehensive set of libraries (APIs) that facilitate various tasks, including data manipulation, networking, GUI development, and more.<br><br>
+        
+        <b>Automatic Memory Management:</b> Java features an automatic garbage collection mechanism that helps manage memory by automatically reclaiming memory that is no longer in use.<br><br>
+        
+        <b>Multithreading Support</b> Java has built-in support for multithreading, allowing developers to write programs that can perform multiple tasks simultaneously, which is crucial for developing responsive applications.<br><br>
+        
+        <b>Security Features:</b> Java includes several security features, such as the Java sandbox, which helps prevent harmful operations by restricting the capabilities of Java applications.<br><br>
+        
+        <b>Strongly Typed:</b> Java enforces strict type checking, which helps catch errors at compile time rather than at runtime.</p><br><br>
+    <input type="checkbox" id="topic1">
+    <label for="topic1">JAVA Basics</label>
+    <div class="content">
+        <h2>1. Java Structure</h2>
+        <p>Every Java program is defined within a class. The class contains methods, with <code>main</code> being the entry point.</p>
+        <pre>
+        Basic Structure:
+        public class MyClass {
+            public static void main(String[] args) {
+                // code goes here
+            }
+        }
+        </pre>
+
+        <h2>2. Comments</h2>
+        <ul>
+            <li><strong>Single-line</strong>: <code>// This is a comment</code></li>
+            <li><strong>Multi-line</strong>: <code>/* This is a multi-line comment */</code></li>
+        </ul>
+
+        <h2>3. Syntax</h2>
+        <ul>
+            <li><strong>Case Sensitivity</strong>: Java is case-sensitive (<code>Variable</code> is different from <code>variable</code>).</li>
+            <li><strong>Semicolon</strong>: Each statement ends with a semicolon (<code>;</code>).</li>
+        </ul>
+
+        <h3>Data Types</h3>
+        <p>Primitive Types:</p>
+        <ul>
+            <li><code>int</code>: Integer (e.g., <code>int num = 10;</code>)</li>
+            <li><code>double</code>: Floating-point (e.g., <code>double pi = 3.14;</code>)</li>
+            <li><code>char</code>: Single character (e.g., <code>char letter = 'A';</code>)</li>
+            <li><code>boolean</code>: True/false (e.g., <code>boolean isTrue = true;</code>)</li>
+        </ul>
+        <p>Non-Primitive Types: Strings, Arrays, Classes, Interfaces.</p>
+
+        <h2>4. Variables</h2>
+
+        <h3>Declaring Variables</h3>
+        <p>Variables must be declared before use.</p>
+        <pre>
+        Syntax: <data_type> <variable_name> = <value>;
+        Example:
+        int age = 25;
+        double salary = 50000.50;
+        char grade = 'A';
+        boolean isEmployed = true;
+        </pre>
+
+        <h3>Variable Naming Rules</h3>
+        <ul>
+            <li>Must start with a letter, underscore (_), or dollar sign ($).</li>
+            <li>Cannot start with a number.</li>
+            <li>No special characters except for <code>_</code> and <code>$</code>.</li>
+            <li>Case-sensitive and should be meaningful.</li>
+        </ul>
+
+        <h2>5. Operations</h2>
+
+        <h3>Arithmetic Operations</h3>
+        <ul>
+            <li>Addition: <code>+</code></li>
+            <li>Subtraction: <code>-</code></li>
+            <li>Multiplication: <code>*</code></li>
+            <li>Division: <code>/</code></li>
+            <li>Modulus: <code>%</code></li>
+        </ul>
+        <pre>
+        Example:
+        int a = 10;
+        int b = 5;
+        int sum = a + b;      // 15
+        int difference = a - b; // 5
+        int product = a * b;   // 50
+        int quotient = a / b;  // 2
+        int remainder = a % b; // 0
+        </pre>
+
+        <h3>Relational Operators</h3>
+        <ul>
+            <li>Equal to: <code>==</code></li>
+            <li>Not equal to: <code>!=</code></li>
+            <li>Greater than: <code>&gt;</code></li>
+            <li>Less than: <code>&lt;</code></li>
+            <li>Greater than or equal to: <code>&gt;=</code></li>
+            <li>Less than or equal to: <code>&lt;=</code></li>
+        </ul>
+        <pre>
+        Example:
+        boolean result = (a > b); // true
+        </pre>
+
+        <h3>Logical Operators</h3>
+        <ul>
+            <li>AND: <code>&&</code></li>
+            <li>OR: <code>||</code></li>
+            <li>NOT: <code>!</code></li>
+        </ul>
+        <pre>
+        Example:
+        boolean result = (a > b) && (b < 10); // true
+        </pre>
+
+        <h3>Assignment Operators</h3>
+        <ul>
+            <li>Simple assignment: <code>=</code></li>
+            <li>Add and assign: <code>+=</code></li>
+            <li>Subtract and assign: <code>-=</code></li>
+            <li>Multiply and assign: <code>*=</code></li>
+            <li>Divide and assign: <code>/=</code></li>
+        </ul>
+        <pre>
+        Example:
+        int c = 10;
+        c += 5; // c = 15
+        </pre>
+
+        <h2>6. Example Program</h2>
+        <p>Here's a simple Java program that demonstrates some of these concepts:</p>
+        <pre>
+        public class SimpleCalculator {
+            public static void main(String[] args) {
+                int num1 = 20;
+                int num2 = 10;
+                int sum = num1 + num2;
+
+                System.out.println("Sum: " + sum);
+                System.out.println("Difference: " + (num1 - num2));
+                System.out.println("Product: " + (num1 * num2));
+                System.out.println("Quotient: " + (num1 / num2));
+            }
+        }
+        </pre>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic2">
+    <label for="topic2">Control Flow Statements</label>
+    <div class="content">
+        <p>Control flow statements determine the order in which statements are executed in a program. They can be categorized into three main types: decision-making statements, looping statements, and branching statements.</p>
+
+        <h2>1. Decision-Making Statements</h2>
+        <p>These statements allow the program to make decisions based on conditions.</p>
+
+        - **if Statement**:
+        <pre>
+        if (condition) {
+            // code to execute if condition is true
+        }
+        </pre>
+
+        - **if-else Statement**:
+        <pre>
+        if (condition) {
+            // code if true
+        } else {
+            // code if false
+        }
+        </pre>
+
+        - **else if Ladder**:
+        <pre>
+        if (condition1) {
+            // code if condition1 is true
+        } else if (condition2) {
+            // code if condition2 is true
+        } else {
+            // code if all conditions are false
+        }
+        </pre>
+
+        - **switch Statement**:
+        <pre>
+        switch (expression) {
+            case value1:
+                // code to execute for value1
+                break;
+            case value2:
+                // code to execute for value2
+                break;
+            default:
+                // code to execute if no case matches
+        }
+        </pre>
+
+        <h2>2. Looping Statements</h2>
+        <p>Looping statements are used to execute a block of code repeatedly until a condition is met.</p>
+
+        - **for Loop**:
+        <pre>
+        for (initialization; condition; increment/decrement) {
+            // code to execute
+        }
+        </pre>
+
+        - **while Loop**:
+        <pre>
+        while (condition) {
+            // code to execute
+        }
+        </pre>
+
+        - **do-while Loop**:
+        <pre>
+        do {
+            // code to execute
+        } while (condition);
+        </pre>
+
+        <h2>3. Branching Statements</h2>
+        <p>Branching statements alter the flow of control by breaking out of or continuing loops.</p>
+
+        - **break Statement**:
+        <pre>
+        break; // exits the loop or switch
+        </pre>
+
+        - **continue Statement**:
+        <pre>
+        continue; // skips the rest of the loop body for this iteration
+        </pre>
+
+        - **return Statement**:
+        <pre>
+        return value; // exits the method and returns a value
+        </pre>
+
+        <h2>Example Program</h2>
+        <p>Here's a simple Java program that demonstrates control flow statements:</p>
+        <pre>
+        public class ControlFlowExample {
+            public static void main(String[] args) {
+                // Decision-making: if-else
+                int number = 10;
+                if (number > 0) {
+                    System.out.println("Number is positive.");
+                } else {
+                    System.out.println("Number is negative or zero.");
+                }
+
+                // Looping: for loop
+                System.out.println("Counting from 1 to 5:");
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println(i);
+                }
+
+                // Looping: while loop
+                int count = 1;
+                System.out.println("Counting using while loop:");
+                while (count <= 5) {
+                    System.out.println(count);
+                    count++;
+                }
+
+                // Branching: break and continue
+                System.out.println("Using break and continue:");
+                for (int i = 1; i <= 10; i++) {
+                    if (i == 5) {
+                        break; // exits the loop when i is 5
+                    }
+                    if (i % 2 == 0) {
+                        continue; // skips the rest of the loop body for even numbers
+                    }
+                    System.out.println(i); // prints only odd numbers
+                }
+            }
+        }
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic3">
+    <label for="topic3">Methods</label>
+    <div class="content">
+        <p>Methods are blocks of code that perform a specific task. They allow you to structure your code for better organization, reusability, and readability.</p>
+
+        <h2>1. Definition of a Method</h2>
+        <p>A method is defined using the following syntax:</p>
+        <pre>
+        returnType methodName(parameterType parameterName) {
+            // body of the method
+            return value; // if returnType is not void
+        }
+        </pre>
+        <ul>
+            <li><strong>returnType</strong>: The data type of the value returned by the method (e.g., <code>int</code>, <code>void</code>, <code>String</code>).</li>
+            <li><strong>methodName</strong>: The name of the method (must follow naming conventions).</li>
+            <li><strong>parameters</strong>: Optional inputs the method can take (defined as type and name).</li>
+            <li><strong>body</strong>: The block of code that defines what the method does.</li>
+        </ul>
+
+        <h2>2. Types of Methods</h2>
+        <p>Methods can be categorized into two main types:</p>
+        <ul>
+            <li><strong>Standard Methods</strong>: Defined by the programmer.</li>
+            <li><strong>Built-in Methods</strong>: Provided by Java and its libraries.</li>
+        </ul>
+
+        <h2>3. Method Declaration</h2>
+        <p>Here's how to declare a simple method:</p>
+        <pre>
+        public void displayMessage() {
+            System.out.println("Hello, World!");
+        }
+        </pre>
+        <ul>
+            <li><strong>Access Modifier</strong>: <code>public</code>, <code>private</code>, or <code>protected</code> (controls visibility).</li>
+            <li><strong>Return Type</strong>: <code>void</code> if no value is returned.</li>
+            <li><strong>Method Name</strong>: <code>displayMessage</code>.</li>
+        </ul>
+
+        <h2>4. Calling a Method</h2>
+        <p>To execute a method, you need to call it by its name:</p>
+        <pre>
+        public static void main(String[] args) {
+            displayMessage(); // Calling the method
+        }
+        </pre>
+
+        <h2>5. Method Parameters</h2>
+        <p>Methods can accept parameters to perform operations on different inputs. For example:</p>
+        <pre>
+        public int add(int a, int b) {
+            return a + b; // Returns the sum of a and b
+        }
+        </pre>
+        <p>You can call this method with arguments:</p>
+        <pre>
+        int sum = add(5, 10); // sum will be 15
+        </pre>
+
+        <h2>6. Method Overloading</h2>
+        <p>Java allows multiple methods with the same name but different parameters (type or number). This is known as method overloading:</p>
+        <pre>
+        public int multiply(int a, int b) {
+            return a * b; // Multiplying two integers
+        }
+
+        public double multiply(double a, double b) {
+            return a * b; // Multiplying two doubles
+        }
+        </pre>
+
+        <h2>7. Return Statement</h2>
+        <p>The <code>return</code> statement is used to exit a method and optionally return a value:</p>
+        <pre>
+        public String getName() {
+            return "John Doe"; // Returns a string
+        }
+        </pre>
+
+        <h2>8. Example Program</h2>
+        <p>Here's a simple Java program demonstrating methods:</p>
+        <pre>
+        public class MethodExample {
+            
+            // Method to print a message
+            public void displayMessage() {
+                System.out.println("Welcome to Java Methods!");
+            }
+
+            // Method to add two numbers
+            public int add(int a, int b) {
+                return a + b;
+            }
+
+            public static void main(String[] args) {
+                MethodExample example = new MethodExample();
+                
+                // Calling methods
+                example.displayMessage();
+                
+                int result = example.add(10, 20);
+                System.out.println("The sum is: " + result);
+            }
+        }
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic4">
+    <label for="topic4">Object-Oriented Programming(OOP)</label>
+    <div class="content">
+        <p>Object-Oriented Programming (OOP) is a programming paradigm that uses "objects" to design software. OOP aims to increase the reusability, flexibility, and maintainability of code by organizing software around data (objects) rather than functions and logic.</p>
+
+        <h2>Key Concepts of OOP</h2>
+
+        <h3>1. Classes and Objects</h3>
+        <p><strong>Class</strong>: A blueprint or template for creating objects. It defines properties (attributes) and methods (functions) that the created objects will have.</p>
+        <p><strong>Object</strong>: An instance of a class. It represents a specific realization of a class and holds its state (data).</p>
+        <pre>
+        class Car {
+            String color;
+            String model;
+
+            void drive() {
+                System.out.println("The car is driving");
+            }
+        }
+
+        Car myCar = new Car(); // Creating an object of the Car class
+        </pre>
+
+        <h3>2. Encapsulation</h3>
+        <p>Encapsulation is the bundling of data (attributes) and methods that operate on the data into a single unit (class). It restricts direct access to some of the object's components, which is a means of preventing accidental interference and misuse of the methods and data.</p>
+        <p><strong>Access Modifiers</strong>: Keywords that set the accessibility of classes, methods, and other members. Common access modifiers include <code>private</code>, <code>protected</code>, and <code>public</code>.</p>
+        <pre>
+        class BankAccount {
+            private double balance; // private attribute
+
+            public void deposit(double amount) {
+                balance += amount; // public method to modify private attribute
+            }
+
+            public double getBalance() {
+                return balance; // public method to access private attribute
+            }
+        }
+        </pre>
+
+        <h3>3. Inheritance</h3>
+        <p>Inheritance is a mechanism where one class can inherit the attributes and methods of another class. It promotes code reusability and establishes a relationship between classes.</p>
+        <p>The class that inherits is called the <strong>subclass</strong> (or child class), and the class being inherited from is called the <strong>superclass</strong> (or parent class).</p>
+        <pre>
+        class Vehicle {
+            void start() {
+                System.out.println("Vehicle is starting");
+            }
+        }
+
+        class Bike extends Vehicle {
+            void ride() {
+                System.out.println("Bike is riding");
+            }
+        }
+
+        Bike myBike = new Bike();
+        myBike.start(); // Inherited method
+        </pre>
+
+        <h3>4. Polymorphism</h3>
+        <p>Polymorphism allows methods to do different things based on the object that it is acting upon, even if they share the same name. It can be achieved through method overloading and method overriding.</p>
+        <p><strong>Method Overloading</strong>: Multiple methods in the same class with the same name but different parameters.</p>
+        <p><strong>Method Overriding</strong>: A subclass provides a specific implementation of a method that is already defined in its superclass.</p>
+        <pre>
+        class Animal {
+            void sound() {
+                System.out.println("Animal makes sound");
+            }
+        }
+
+        class Dog extends Animal {
+            void sound() {
+                System.out.println("Dog barks");
+            }
+        }
+
+        Animal myDog = new Dog();
+        myDog.sound(); // Outputs: Dog barks (method overriding)
+        </pre>
+
+        <h3>5. Abstraction</h3>
+        <p>Abstraction is the concept of hiding the complex implementation details and showing only the essential features of an object. It can be achieved using abstract classes and interfaces.</p>
+        <p><strong>Abstract Class</strong>: A class that cannot be instantiated and may contain abstract methods (without a body) that must be implemented by subclasses.</p>
+        <p><strong>Interface</strong>: A reference type in Java that can contain only constants, method signatures, default methods, static methods, and nested types. It cannot contain instance fields.</p>
+        <pre>
+        abstract class Shape {
+            abstract void draw(); // Abstract method
+        }
+
+        class Circle extends Shape {
+            void draw() {
+                System.out.println("Drawing Circle");
+            }
+        }
+        </pre>
+
+        <h2>Example Program</h2>
+        <p>Here's a simple Java program demonstrating OOP concepts:</p>
+        <pre>
+        class Animal {
+            void eat() {
+                System.out.println("Animal eats");
+            }
+        }
+
+        class Dog extends Animal {
+            void bark() {
+                System.out.println("Dog barks");
+            }
+        }
+
+        public class OOPExample {
+            public static void main(String[] args) {
+                Dog myDog = new Dog(); // Creating an object of Dog class
+                myDog.eat(); // Inherited method
+                myDog.bark(); // Dog's method
+            }
+        }
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic5">
+    <label for="topic5">Exception Handling</label>
+    <div class="content">
+        <p>Exception handling is a powerful mechanism that handles runtime errors, allowing the program to continue its normal execution. It helps maintain the normal flow of the application by managing exceptional situations.</p>
+
+        <h2>Key Concepts</h2>
+
+        <h3>1. Exception</h3>
+        <p>An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. It can be caused by various factors, including invalid user input, unavailable resources, or programming errors.</p>
+
+        <h3>2. Types of Exceptions</h3>
+        <ul>
+            <li><strong>Checked Exceptions</strong>: Exceptions that are checked at compile-time. The compiler requires you to handle these exceptions (e.g., <code>IOException</code>, <code>SQLException</code>).</li>
+            <li><strong>Unchecked Exceptions</strong>: Exceptions that are not checked at compile-time. These are typically runtime exceptions (e.g., <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>).</li>
+            <li><strong>Errors</strong>: Serious issues that a reasonable application should not try to catch (e.g., <code>OutOfMemoryError</code>, <code>StackOverflowError</code>).</li>
+        </ul>
+
+        <h3>3. Exception Handling Blocks</h3>
+        <ul>
+            <li><strong>try Block</strong>: Contains the code that might throw an exception. If an exception occurs, control is transferred to the corresponding catch block.</li>
+            <li><strong>catch Block</strong>: Contains code that handles the exception. It is used to catch and process exceptions thrown by the try block.</li>
+            <li><strong>finally Block</strong>: Optional block that executes after the try and catch blocks, regardless of whether an exception was thrown or not. It's often used for cleanup activities (e.g., closing resources).</li>
+        </ul>
+
+        <h3>Basic Syntax</h3>
+        <pre>
+        try {
+            // Code that may throw an exception
+        } catch (ExceptionType e) {
+            // Code to handle the exception
+        } finally {
+            // Code that will always execute
+        }
+        </pre>
+
+        <h2>Example of Exception Handling</h2>
+        <p>Here's a simple example demonstrating exception handling in Java:</p>
+        <pre>
+        public class ExceptionHandlingExample {
+            public static void main(String[] args) {
+                try {
+                    int[] numbers = {1, 2, 3};
+                    System.out.println(numbers[3]); // This will throw ArrayIndexOutOfBoundsException
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    System.out.println("Array index is out of bounds: " + e.getMessage());
+                } finally {
+                    System.out.println("This will always execute.");
+                }
+            }
+        }
+        </pre>
+
+        <h2>Throwing Exceptions</h2>
+        <p>You can also throw exceptions manually using the <code>throw</code> statement:</p>
+        <pre>
+        public void checkAge(int age) {
+            if (age < 18) {
+                throw new IllegalArgumentException("Age must be 18 or older.");
+            }
+        }
+        </pre>
+
+        <h2>Custom Exceptions</h2>
+        <p>You can create your own exception classes by extending the <code>Exception</code> class or any of its subclasses:</p>
+        <pre>
+        class MyException extends Exception {
+            public MyException(String message) {
+                super(message);
+            }
+        }
+
+        public class CustomExceptionExample {
+            public static void main(String[] args) {
+                try {
+                    throw new MyException("This is a custom exception.");
+                } catch (MyException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        </pre>
+
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic6">
+    <label for="topic6">Collections Framework</label>
+    <div class="content">
+        <p>The Collections Framework is a unified architecture for representing and manipulating collections in Java. It provides data structures and algorithms for storing and processing groups of data efficiently. The framework includes interfaces, implementations, and algorithms.</p>
+
+        <h2>Key Interfaces</h2>
+
+        <h3>1. Collection</h3>
+        <p>The root interface in the collection hierarchy. It defines basic operations like adding, removing, and checking elements.</p>
+        
+        <h3>2. List</h3>
+        <p>An ordered collection that allows duplicate elements. It provides positional access to elements.</p>
+        <ul>
+            <li><strong>Common Implementations</strong>:
+                <ul>
+                    <li><strong>ArrayList</strong>: A resizable array implementation of the List interface. It offers fast random access but is slow for inserting and deleting elements in the middle.</li>
+                    <li><strong>LinkedList</strong>: A doubly linked list implementation of the List interface. It is more efficient for insertions and deletions compared to ArrayList.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3. Set</h3>
+        <p>A collection that does not allow duplicate elements. It models the mathematical set abstraction.</p>
+        <ul>
+            <li><strong>Common Implementations</strong>:
+                <ul>
+                    <li><strong>HashSet</strong>: Implements the Set interface using a hash table. It provides constant-time performance for basic operations but does not guarantee the order of elements.</li>
+                    <li><strong>LinkedHashSet</strong>: Like HashSet, but maintains a linked list of the entries, which defines the iteration order.</li>
+                    <li><strong>TreeSet</strong>: A NavigableSet implementation based on a red-black tree. It provides ordered traversal.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>4. Map</h3>
+        <p>A collection that maps keys to values, where each key is unique. It does not implement the Collection interface.</p>
+        <ul>
+            <li><strong>Common Implementations</strong>:
+                <ul>
+                    <li><strong>HashMap</strong>: Implements the Map interface using a hash table. It allows null values and is not synchronized.</li>
+                    <li><strong>LinkedHashMap</strong>: Maintains a linked list of entries in the order they were added.</li>
+                    <li><strong>TreeMap</strong>: A NavigableMap implementation based on a red-black tree. It sorts the keys based on their natural ordering or a specified comparator.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Key Methods</h2>
+        <ul>
+            <li><code>add()</code>: Adds an element to a collection.</li>
+            <li><code>remove()</code>: Removes an element from a collection.</li>
+            <li><code>contains()</code>: Checks if an element exists in a collection.</li>
+            <li><code>size()</code>: Returns the number of elements in a collection.</li>
+            <li><code>iterator()</code>: Returns an iterator to traverse the elements in a collection.</li>
+        </ul>
+
+        <h2>Example of Collections Framework Usage</h2>
+        <p>Here's a simple example demonstrating the use of an <code>ArrayList</code> and a <code>HashMap</code>:</p>
+        <pre>
+        import java.util.ArrayList;
+        import java.util.HashMap;
+
+        public class CollectionsExample {
+            public static void main(String[] args) {
+                // Using ArrayList
+                ArrayList&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+                fruits.add("Apple");
+                fruits.add("Banana");
+                fruits.add("Orange");
+                System.out.println("Fruits: " + fruits);
+
+                // Using HashMap
+                HashMap&lt;String, Integer&gt; scores = new HashMap&lt;&gt;();
+                scores.put("Alice", 90);
+                scores.put("Bob", 85);
+                System.out.println("Scores: " + scores);
+            }
+        }
+        </pre>
+
+        <h2>Iterating Over Collections</h2>
+        <p>You can iterate over collections using different methods:</p>
+
+        <h3>1. Using for-each loop:</h3>
+        <pre>
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+        </pre>
+
+        <h3>2. Using Iterator:</h3>
+        <pre>
+        Iterator&lt;String&gt; iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic7">
+    <label for="topic7">File Handling</label>
+    <div class="content">
+        <p>File handling in Java is essential for performing operations like reading from and writing to files. Java provides a robust API for handling files through various classes in the <code>java.io</code> package.</p>
+
+        <h2>Key Classes for File Handling</h2>
+
+        <ul>
+            <li><strong>File</strong>: Represents a file or directory path in the file system. It provides methods for creating, deleting, and checking file properties.</li>
+            <li><strong>FileReader</strong>: Used for reading character files. It reads the contents of a file as a stream of characters.</li>
+            <li><strong>FileWriter</strong>: Used for writing character files. It writes data to a file as a stream of characters.</li>
+            <li><strong>BufferedReader</strong>: Provides buffering for reading text from a character input stream. It enhances efficiency by reducing the number of I/O operations.</li>
+            <li><strong>BufferedWriter</strong>: Provides buffering for writing text to a character output stream, improving the efficiency of write operations.</li>
+            <li><strong>PrintWriter</strong>: A subclass of Writer that provides convenient methods for writing formatted text to a file.</li>
+        </ul>
+
+        <h2>Basic File Operations</h2>
+
+        <h3>1. Creating a File</h3>
+        <p>To create a new file, you can use the <code>File</code> class.</p>
+        <pre>
+        import java.io.File;
+        import java.io.IOException;
+
+        public class CreateFileExample {
+            public static void main(String[] args) {
+                try {
+                    File file = new File("example.txt");
+                    if (file.createNewFile()) {
+                        System.out.println("File created: " + file.getName());
+                    } else {
+                        System.out.println("File already exists.");
+                    }
+                } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                }
+            }
+        }
+        </pre>
+
+        <h3>2. Writing to a File</h3>
+        <p>You can write to a file using <code>FileWriter</code> or <code>BufferedWriter</code>.</p>
+        <pre>
+        import java.io.BufferedWriter;
+        import java.io.FileWriter;
+        import java.io.IOException;
+
+        public class WriteFileExample {
+            public static void main(String[] args) {
+                try {
+                    BufferedWriter writer = new BufferedWriter(new FileWriter("example.txt"));
+                    writer.write("Hello, World!");
+                    writer.newLine(); // Write a new line
+                    writer.write("Welcome to file handling in Java.");
+                    writer.close();
+                    System.out.println("Successfully wrote to the file.");
+                } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                }
+            }
+        }
+        </pre>
+
+        <h3>3. Reading from a File</h3>
+        <p>To read the contents of a file, you can use <code>BufferedReader</code>.</p>
+        <pre>
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.IOException;
+
+        public class ReadFileExample {
+            public static void main(String[] args) {
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader("example.txt"));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                }
+            }
+        }
+        </pre>
+
+        <h3>4. Deleting a File</h3>
+        <p>To delete a file, you can use the <code>delete()</code> method of the <code>File</code> class.</p>
+        <pre>
+        import java.io.File;
+
+        public class DeleteFileExample {
+            public static void main(String[] args) {
+                File file = new File("example.txt");
+                if (file.delete()) {
+                    System.out.println("Deleted the file: " + file.getName());
+                } else {
+                    System.out.println("Failed to delete the file.");
+                }
+            }
+        }
+        </pre>
+    </div>
+    <br><br>
+
+</body>
+</html>

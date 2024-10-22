@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: #B0C4DE;
+    }
+    summary {
+        font-size: 18px;
+        color:rgb(11, 11, 11);
+        cursor: pointer;
+    }
+
+    summary:hover {
+        color: #0056b3;
+    }
+
+    details {
+        margin-top: 10px;
+    }
+
+    details[open] summary {
+        color: #333;
+    }
+
+    #k {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: whitesmoke;
+        border: 1px solid #333;
+    }
+    footer{
+        display:flex;
+       margin-top: 100px;
+       margin-bottom: 10px;
+        background-color: rgb(75, 75, 87);
+       }footer li a
+       {
+        color:white;
+        padding:10px;
+       }h3
+       {
+        color:white;
+       }.area
+       {
+         margin-left: 190px;
+         margin-top: 20px;
+         margin-bottom: 20px;
+       }
+       li a{
+        text-decoration: none;
+       }
+       .last{
+      display: flex;
+       }
+
+       .footer{
+        width: 100;
+        text-align: center;
+        padding: 30px 0;
+     }
+     .footer h4{
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 600;
+     }
+     .icons .bi{
+        color: #f44336;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 18px 0;
+     }
+     .bi-heart{
+        color: #f44336;
+     }
+     #p{
+        color: #777;
+     }
+     nav
+     {
+        display:flex;
+     }img
+     {
+        border-radius: 20px;
+     }
+     #logo
+     {
+        display:flex;
+        width:75px;
+        height:75px;
+        margin-top: 10px;
+        padding-left: 10px;
+        
+     }#logo1
+     {
+        display: flex;
+        margin-left: 60px;
+        margin-top: 8px;   
+        font-size: 38px;       
+     }
+     #navbar ul
+     {
+        display:flex;
+        margin-top: 20px;
+        padding-left: 10px;
+     }
+     #navbar li a
+    {
+    border-radius: 8px;
+    padding:10px;
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color:rgb(237, 230, 230);
+   }
+   #navbar li a:hover
+    {
+    background-color: black;
+    color:rgb(221, 223, 224);
+   } li
+   {
+    list-style: none;
+   }.search
+   {
+   margin-top: 15px;
+    margin-left: 500px;
+    display: flex;
+    height:40px;
+   
+   }.search input{
+    padding:5px;
+    border-radius: 10px;
+   }
+
+   .aboutus{
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(snaps/mine.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+#w{
+    text-decoration: none;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 15px;
+}
+#j{
+    color: white;
+}
+#y{
+    text-align: center;
+}
+</style>
+<body>
+    <section class="aboutus">
+        <nav id="navbar">
+         <div id="logo">
+           <img src="snaps/main.jpg">
+           </div>
+            <ul>
+               <li class="item"><a href="yamuna.html">Home</a></li>
+               <li class="item"><a href="notes.html">Notes</a></li>
+               <li class="item"><a href="mercy.html">Problems</a></li>
+               <li class="item"><a href="aboutus.html">About Us</a></li>
+               <li class="item"><a href="contactus.html">Contact Us</a></li>
+             </ul>
+           <div class="search">
+               <input type="text" placeholder="Search">
+           </div>
+           <div id="logo1">
+            <a href="login2.html" id="j"><i class="bi bi-person-circle"></i></a>
+           </div>
+      </nav>
+
+   </section>
+    <h1>GITHUB Practice Questions</h1>
+    <details>
+        <summary>Collaboration and Issue Management</summary>
+        <p id="k">1.Create a new issue in your repository describing a bug or feature request.</p>
+        <p id="k">2.Assign the issue you created to yourself and add a label (e.g., "bug").</p>
+        <p id="k">3.Create a milestone called "v1.0 Release" and assign your issue to it.</p>
+        <p id="k">4.Open an issue, close it with a comment, and reference a related commit.</p>
+        <p id="k">5.Create a project board with columns for "To Do," "In Progress," and "Done." Add an issue to the "To Do" column.</p>
+        <p id="k">6.Create an issue template for your repository for bug reports.</p>
+        <p id="k">7.Convert an issue into a discussion, and comment on it with a potential solution.</p>
+        <p id="k">8.Filter issues by label and milestone to view only relevant issues.</p>
+        <p id="k">9.Move an issue from one project board column to another after completing a task.</p>
+        <p id="k">10.Transfer an issue to another repository within the same organization.</p>
+    </details>
+    <br><br>
+    <details>
+        <summary>Security and Access Control</summary>
+        <p id="k">1.Set up branch protection rules to prevent direct pushes to the main branch.</p>
+        <p id="k">2.Enable required pull request reviews before merging into the <b>main</b> branch.</p>
+        <p id="k">3.Invite a collaborator to your repository with "Read" access only.</p>
+        <p id="k">4.Create a GitHub Secret for your repository (e.g., API key for a service).</p>
+        <p id="k">5.Enable Dependabot to automatically scan for security vulnerabilities in your project.</p>
+        <p id="k">6.View and manage the security alerts for an open-source project.</p>
+        <p id="k">7.Use GitHub's Dependabot to update a vulnerable dependency in your repository.</p>
+        <p id="k">8.Restrict access to a specific branch so only maintainers can push changes.</p>
+        <p id="k">9.Enable code scanning for your repository to identify security vulnerabilities.</p>
+        <p id="k">10.Create a "Contributing" guide that informs users how to submit security-related pull requests.</p>
+    </details>
+    <br><br>
+    <details>
+        <summary>GitHub Pages and Gists</summary>
+        <p id="k">1.Create a new GitHub Pages site for a repository and publish it.</p>
+        <p id="k">2.Customize the theme of your GitHub Pages site using the Jekyll theme chooser.</p>
+        <p id="k">3.Add a custom domain to your GitHub Pages site and configure DNS settings.</p>
+        <p id="k">4.Create a Gist with a small piece of code and make it public.</p>
+        <p id="k">5.Fork an existing Gist, modify it, and save your version.</p>
+        <p id="k">6.Publish a simple blog using Jekyll on GitHub Pages.</p>
+        <p id="k">7.Create a Gist for a multi-file project and explain how you would share it.</p>
+        <p id="k">8.Create a Gist with Markdown formatting to showcase a tutorial.</p>
+        <p id="k">9.Configure your GitHub Pages site to automatically build and deploy from a specific branch.</p>
+        <p id="k">10.Delete a Gist that you no longer need.</p>
+    </details>
+    <br><br>
+    <details>
+        <summary>Releases, Tags, and Versioning</summary>
+        <p id="k">1.Tag a specific commit with a version number (e.g., v1.0).</p>
+        <p id="k">2.Create a new release with detailed release notes in a GitHub repository.</p>
+        <p id="k">3.Upload an asset (e.g., compiled binary) to a release for users to download.</p>
+        <p id="k">4.Mark a release as a "Pre-release" version and explain when this is useful.</p>
+        <p id="k">5.Roll back to a previous version of your project by checking out an earlier release tag.</p>
+        <p id="k">6.Delete a tag and a corresponding release from a repository.</p>
+        <p id="k">7.Download a previous release as a ZIP file and inspect the contents.</p>
+        <p id="k">8.Add a changelog to your release notes to document new features and bug fixes.</p>
+        <p id="k">9.Automate the creation of releases using a GitHub Action workflow.</p>
+        <p id="k">10.Link related pull requests and issues to a new release for better traceability.</p>
+    </details>
+    <br><br>
+    <details>
+        <summary>Integrations and GitHub API</summary>
+        <p id="k">1.Generate a personal access token to authenticate GitHub API requests.</p>
+        <p id="k">2.Write a simple script using the GitHub REST API to retrieve the list of all repositories in an organization.</p>
+        <p id="k">3.Set up a webhook that triggers a notification to Slack when a new issue is created.</p>
+        <p id="k">4.Use GitHub Actions to automatically run tests whenever you push to the main branch.</p>
+        <p id="k">5.Fetch information about the latest release of a repository using the GitHub REST API.</p>
+        <p id="k">6.Configure a GitHub Action to deploy your code to a production server when a release is published.</p>
+        <p id="k">7.Trigger automated testing of your code using a third-party CI tool integrated with GitHub.</p>
+        <p id="k">8.Set up notifications in your team’s Slack channel for new pull requests using a GitHub integration.</p>
+        <p id="k">9.Implement a bot using the GitHub API to automatically assign reviewers to pull requests.</p>
+        <p id="k">10.Use the GitHub API to list all open pull requests in a repository.</p>
+    </details>
+    </div>
+    <footer>
+        <div class="area">
+         <h3>Learning Courses</h3>
+         <ul>
+            <li><a href="">Learn Python</a></li>
+            <li><a href="">Learn Java</a></li>
+            <li><a href="">Learn C</a></li>
+            <li><a href="">Learn HTML</a></li>
+            <li><a href="">Learn CSS</a></li>
+            <li><a href="">More learning Courses</a></li>
+         </ul>
+        </div>
+        <div class="area">
+            <h3>Practice Paths</h3>
+            <ul>
+               <li><a href="">Practice Python</a></li>
+               <li><a href="">Practice Java</a></li>
+               <li><a href="">Practice C</a></li>
+               <li><a href="">Practice HTML</a></li>
+               <li><a href="">Practice CSS</a></li>
+               <li><a href="">More practice paths</a></li>
+            </ul>
+           </div>
+           <div class="area">
+            <h3>Online Compilers</h3>
+            <ul>
+               <li><a href="">Python online compiler</a></li>
+               <li><a href="">C online compiler</a></li>
+               <li><a href="">c++ online compiler</a></li>
+               <li><a href="">Java online compiler</a></li>
+               <li><a href="">JavaScript online compiler</a></li>
+               <li><a href="">More Compilers</a></li>
+            </ul>
+           </div>
+    </footer>
+    <p id="y">www.codecrafters.com</p>
+    
+    
+    
+    <section class="footer">
+        <h4>Follow Us</h4>
+        
+            <div class="icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-linkedin"></i>
+            </div>
+              <p id="w">Made with <i class="bi bi-heart"></i> by code Crafters</p>
+        </section>
+</body>
+</html>

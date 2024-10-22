@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #B0C4DE;
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      font-size: 18px;
+      color: #007bff;
+      position: relative;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+    label:hover::after {
+      width: 100%;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+    input[type="checkbox"]:checked + label + .content {
+      display: block;
+    }
+    h1,h2,h3{
+        color: #2C3E50;
+    }
+    code {
+        background-color: #f4f4f4;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    
+    <h1>CSS Notes</h1>
+    <p>
+        CSS, or Cascading Style Sheets, is a stylesheet language used to control the presentation of HTML documents. It allows you to specify how elements on a web page should be displayed, including aspects like layout, colors, fonts, spacing, and overall visual aesthetics. Here are some key points about CSS:<br><br>
+        <b>Separation of Content and Presentation:</b> CSS separates the content (HTML) from its presentation, making it easier to manage and maintain web pages.<br><br>
+        <b>Selectors:</b> CSS uses selectors to target HTML elements. For example, you can select elements by their tag name, class, or ID.<br><br>
+        <b>Properties and Values:</b> Each CSS rule consists of properties and values. For example, <b>color: blue;</b> sets the text color to blue.<br><br>
+        <b>Cascading and Inheritance:</b> The term "cascading" refers to how styles can be overridden. Styles applied later in the stylesheet take precedence over earlier ones. Inheritance allows child elements to inherit styles from their parent elements.<br><br>
+        <b>Responsive Design:</b> CSS supports responsive web design, allowing web pages to adapt to different screen sizes and devices through media queries.<br><br>
+        <b>Frameworks and Preprocessors:</b> CSS frameworks (like Bootstrap) and preprocessors (like SASS or LESS) can help streamline development by providing reusable styles and features.
+    </p><br><br>
+    <input type="checkbox" id="topic1">
+    <label for="topic1">Selections and Specificity</label>
+    <div class="content">
+        <h2>CSS Selectors</h2>
+        <p>Selectors are patterns used to select the elements you want to style. Here are the main types of CSS selectors:</p>
+        <ul>
+            <li><strong>Universal Selector</strong> (<code>*</code>): Selects all elements. 
+                <code>* { margin: 0; padding: 0; }</code>
+            </li>
+            <li><strong>Type Selector</strong>: Selects all elements of a given type. 
+                <code>p { color: blue; }</code> selects all <code>&lt;p&gt;</code> elements.
+            </li>
+            <li><strong>Class Selector</strong> (<code>.</code>): Selects elements with a specific class attribute. 
+                <code>.highlight { background-color: yellow; }</code>
+            </li>
+            <li><strong>ID Selector</strong> (<code>#</code>): Selects a single element with a specific ID. 
+                <code>#header { font-size: 24px; }</code>
+            </li>
+            <li><strong>Attribute Selector</strong>: Selects elements based on an attribute or attribute value. 
+                <code>input[type="text"] { border: 1px solid #ccc; }</code>
+            </li>
+            <li><strong>Child Selector</strong> (<code>&gt;</code>): Selects direct children of a specified element. 
+                <code>ul &gt; li { list-style-type: none; }</code>
+            </li>
+            <li><strong>Descendant Selector</strong> (space): Selects elements that are descendants of a specified element. 
+                <code>div p { color: red; }</code>
+            </li>
+            <li><strong>Adjacent Sibling Selector</strong> (<code>+</code>): Selects an element that is directly after a specified element. 
+                <code>h1 + p { margin-top: 0; }</code>
+            </li>
+            <li><strong>General Sibling Selector</strong> (<code>~</code>): Selects all siblings after a specified element. 
+                <code>h1 ~ p { color: green; }</code>
+            </li>
+        </ul>
+
+        <h2>Specificity</h2>
+        <p>Specificity determines which CSS rule is applied when multiple rules target the same element. It’s calculated based on the types of selectors used in a rule. Here’s how specificity works:</p>
+        <ul>
+            <li><strong>Calculating Specificity</strong>: Each selector type has a weight:
+                <ul>
+                    <li>Inline styles: <code>1,0,0,0</code></li>
+                    <li>IDs: <code>0,1,0,0</code></li>
+                    <li>Classes, attributes, and pseudo-classes: <code>0,0,1,0</code></li>
+                    <li>Type selectors and pseudo-elements: <code>0,0,0,1</code></li>
+                </ul>
+                Combine the weights to calculate total specificity.
+            </li>
+            <li><strong>Examples</strong>:
+                <ul>
+                    <li><code>#header</code> (ID) → specificity = <code>0,1,0,0</code></li>
+                    <li><code>.menu</code> (class) → specificity = <code>0,0,1,0</code></li>
+                    <li><code>div p</code> (type) → specificity = <code>0,0,0,2</code> (1 for <code>div</code> + 1 for <code>p</code>)</li>
+                </ul>
+            </li>
+            <li><strong>Applying Specificity</strong>: If two rules conflict, the one with the higher specificity takes precedence. In cases of equal specificity, the last rule declared in the CSS file is applied.</li>
+            <li><strong>Importance of Specificity</strong>: Understanding specificity helps avoid conflicts and ensures the intended styles are applied correctly. Use more specific selectors when necessary but strive for maintainable CSS by avoiding overly specific rules.</li>
+        </ul>
+    </div>
+    <br><br>   
+    <input type="checkbox" id="topic2">
+    <label for="topic2">Box Model and Layout</label>
+    <div class="content">
+        <h2>CSS Box Model</h2>
+        <p>The CSS Box Model is a fundamental concept that defines how elements are structured and displayed on a web page. Each element can be considered as a box, which consists of several components:</p>
+        <ul>
+            <li><strong>Content</strong>: The innermost part of the box, where text and images appear. Dimensions are defined by the <code>width</code> and <code>height</code> properties.</li>
+            <li><strong>Padding</strong>: The space between the content and the border. Adds space inside the box, affecting the total size of the box. Controlled by the <code>padding</code> property (e.g., <code>padding: 10px;</code>).</li>
+            <li><strong>Border</strong>: Surrounds the padding (if any) and content. Can be styled with width, color, and style (e.g., solid, dashed). Controlled by the <code>border</code> property (e.g., <code>border: 1px solid black;</code>).</li>
+            <li><strong>Margin</strong>: The outermost space around the box, creating distance from other elements. Affects the spacing between boxes. Controlled by the <code>margin</code> property (e.g., <code>margin: 20px;</code>).</li>
+        </ul>
+        <h3>Box Model Calculation</h3>
+        <p>The total width and height of a box can be calculated using the following formulas:</p>
+        <ul>
+            <li><strong>Total Width</strong> = <code>width + padding-left + padding-right + border-left + border-right + margin-left + margin-right</code></li>
+            <li><strong>Total Height</strong> = <code>height + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom</code></li>
+        </ul>
+
+        <h2>Layout Techniques</h2>
+        <p>Various layout techniques can be used to position elements on a web page effectively:</p>
+        <ul>
+            <li><strong>Normal Flow</strong>: Elements are arranged in the order they appear in the HTML, from top to bottom, left to right.</li>
+            <li><strong>Float</strong>: The <code>float</code> property allows elements to be taken out of the normal flow and positioned to the left or right. Commonly used for text wrapping around images. Example: <code>float: left;</code></li>
+            <li><strong>Positioning</strong>: The <code>position</code> property controls how elements are positioned in the layout:
+                <ul>
+                    <li><strong>Static</strong>: Default positioning; elements are positioned according to the normal flow.</li>
+                    <li><strong>Relative</strong>: Positioned relative to its normal position (using <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>).</li>
+                    <li><strong>Absolute</strong>: Positioned relative to the nearest positioned ancestor (not in the normal flow).</li>
+                    <li><strong>Fixed</strong>: Positioned relative to the viewport, remains in place during scrolling.</li>
+                    <li><strong>Sticky</strong>: A hybrid of relative and fixed positioning, becomes fixed after a specified scroll point.</li>
+                </ul>
+            </li>
+            <li><strong>Flexbox</strong>: A layout model that allows for flexible and responsive designs. Uses <code>display: flex;</code> on a container to create a flexible box layout. Aligns and distributes space among items along a single axis.</li>
+            <li><strong>Grid</strong>: A powerful two-dimensional layout system that uses rows and columns. Uses <code>display: grid;</code> on a container, allowing for complex layouts with ease. Items can span multiple rows and columns.</li>
+            <li><strong>CSS Frameworks</strong>: Frameworks like Bootstrap or Foundation provide predefined grid systems and components to facilitate responsive design.</li>
+     </ul>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic3">
+    <label for="topic3">Flex Box and Grid</label>
+    <div class="content">
+        <h2>Flexbox (Flexible Box Layout)</h2>
+        <p>Flexbox is a one-dimensional layout model that allows for easy alignment and distribution of space among items in a container. It is particularly useful for aligning items in a row or column.</p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Flex Container</strong>: A parent element that contains flex items. To make an element a flex container, apply the <code>display: flex;</code> or <code>display: inline-flex;</code> property.</li>
+            <li><strong>Flex Items</strong>: The direct children of a flex container. Flex items can be manipulated using various flex properties.</li>
+            <li><strong>Main Axis and Cross Axis</strong>: The <em>main axis</em> is the primary direction along which flex items are laid out (horizontal by default). The <em>cross axis</em> is perpendicular to the main axis (vertical by default).</li>
+        </ul>
+
+        <h3>Flexbox Properties</h3>
+        <ul>
+            <li><strong>Container Properties</strong>:
+                <ul>
+                    <li><code>flex-direction</code>: Defines the direction of the main axis. Values: <code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>.</li>
+                    <li><code>justify-content</code>: Aligns flex items along the main axis. Values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>.</li>
+                    <li><code>align-items</code>: Aligns flex items along the cross axis. Values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>.</li>
+                    <li><code>flex-wrap</code>: Controls whether flex items should wrap onto multiple lines. Values: <code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>.</li>
+                </ul>
+            </li>
+            <li><strong>Item Properties</strong>:
+                <ul>
+                    <li><code>flex-grow</code>: Defines the ability of a flex item to grow relative to others. Default is <code>0</code> (no growth).</li>
+                    <li><code>flex-shrink</code>: Defines the ability of a flex item to shrink relative to others. Default is <code>1</code> (can shrink).</li>
+                    <li><code>flex-basis</code>: Defines the initial size of a flex item before space is distributed. Can be a length value or <code>auto</code>.</li>
+                    <li><code>align-self</code>: Overrides the <code>align-items</code> property for individual flex items.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Example</h3>
+        <pre><code>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item {
+            flex: 1; /* Allows items to grow and fill available space */
+        }
+        </code></pre>
+
+        <h2>Grid Layout</h2>
+        <p>Grid is a two-dimensional layout model that allows for the arrangement of elements in rows and columns, enabling more complex layouts than Flexbox.</p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Grid Container</strong>: A parent element that defines a grid layout. To create a grid container, apply the <code>display: grid;</code> or <code>display: inline-grid;</code> property.</li>
+            <li><strong>Grid Items</strong>: The direct children of a grid container. Grid items are placed into the grid cells.</li>
+            <li><strong>Grid Lines</strong>: Horizontal and vertical lines that divide the grid into cells. They can be referenced by their numerical index.</li>
+        </ul>
+
+        <h3>Grid Properties</h3>
+        <ul>
+            <li><strong>Container Properties</strong>:
+                <ul>
+                    <li><code>grid-template-columns</code>: Defines the number and size of columns in the grid.</li>
+                    <li><code>grid-template-rows</code>: Defines the number and size of rows in the grid.</li>
+                    <li><code>grid-gap</code> (or <code>gap</code>): Sets the size of the gap between rows and columns.</li>
+                    <li><code>grid-template-areas</code>: Allows naming grid areas for easier placement of items.</li>
+                </ul>
+            </li>
+            <li><strong>Item Properties</strong>:
+                <ul>
+                    <li><code>grid-column</code>: Defines which columns an item should span. Can be specified with start and end line numbers (e.g., <code>grid-column: 1 / 3;</code>).</li>
+                    <li><code>grid-row</code>: Defines which rows an item should span. Can also be specified with start and end line numbers (e.g., <code>grid-row: 2 / 4;</code>).</li>
+                    <li><code>grid-area</code>: A shorthand property that combines <code>grid-row</code> and <code>grid-column</code> definitions.</li>
+                </ul>
+            </li>
+        </ul>
+
+            <h3>Example</h3>
+            <pre><code>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            grid-template-rows: auto;
+            gap: 10px; /* Space between grid items */
+        }
+
+        .grid-item {
+            grid-column: span 2; /* Span two columns */
+        }
+            </code></pre>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic4">
+    <label for="topic4">Typography and Text Styling</label>
+    <div class="content">
+        <h2>Typography in CSS</h2>
+        <p>Typography refers to the style, arrangement, and appearance of text. Good typography enhances readability and user experience on websites.</p>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Font Family</strong>: Defines the typeface used for text.
+                <ul>
+                    <li>Example: <code>font-family: 'Arial', sans-serif;</code></li>
+                </ul>
+            </li>
+            <li><strong>Font Size</strong>: Sets the size of the text. Can be specified in various units (px, em, rem, %, etc.).
+                <ul>
+                    <li>Example: <code>font-size: 16px;</code> /* Fixed size</li>
+                    <li>Example: <code>font-size: 1.5em;</code> /* Relative size</li>
+                </ul>
+            </li>
+            <li><strong>Font Weight</strong>: Controls the thickness of the font.
+                <ul>
+                    <li>Example: <code>font-weight: bold;</code></li>
+                    <li>Example: <code>font-weight: 700;</code> /* Equivalent to bold</li>
+                </ul>
+            </li>
+            <li><strong>Font Style</strong>: Defines the style of the font, such as normal, italic, or oblique.
+                <ul>
+                    <li>Example: <code>font-style: italic;</code></li>
+                </ul>
+            </li>
+            <li><strong>Font Variant</strong>: Controls the usage of small-caps in text.
+                <ul>
+                    <li>Example: <code>font-variant: small-caps;</code></li>
+                </ul>
+            </li>
+            <li><strong>Line Height</strong>: Sets the height of lines of text.
+                <ul>
+                    <li>Example: <code>line-height: 1.5;</code> /* 1.5 times the font size</li>
+                </ul>
+            </li>
+            <li><strong>Letter Spacing</strong>: Adjusts the space between characters in text.
+                <ul>
+                    <li>Example: <code>letter-spacing: 0.05em;</code> /* Increases space between letters</li>
+                </ul>
+            </li>
+            <li><strong>Word Spacing</strong>: Adjusts the space between words in text.
+                <ul>
+                    <li>Example: <code>word-spacing: 0.1em;</code> /* Increases space between words</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Text Styling in CSS</h2>
+        <p>Text styling involves modifying the appearance of text to enhance its visual impact and readability.</p>
+
+        <h3>Text Properties</h3>
+        <ul>
+            <li><strong>Text Color</strong>: Sets the color of the text.
+                <ul>
+                    <li>Example: <code>color: #333;</code> /* Dark gray text</li>
+                </ul>
+            </li>
+            <li><strong>Text Alignment</strong>: Defines the alignment of text within an element (left, right, center, justify).
+                <ul>
+                    <li>Example: <code>text-align: center;</code> /* Centers the text</li>
+                </ul>
+            </li>
+            <li><strong>Text Decoration</strong>: Adds decorations to text, such as underline, overline, or line-through.
+                <ul>
+                    <li>Example: <code>text-decoration: underline;</code> /* Underlines the text</li>
+                </ul>
+            </li>
+            <li><strong>Text Transform</strong>: Controls the capitalization of text (uppercase, lowercase, capitalize).
+                <ul>
+                    <li>Example: <code>text-transform: uppercase;</code> /* Converts text to uppercase</li>
+                </ul>
+            </li>
+            <li><strong>Text Shadow</strong>: Applies a shadow effect to the text.
+                <ul>
+                    <li>Example: <code>text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</code> /* Adds shadow to text</li>
+                </ul>
+            </li>
+            <li><strong>White Space</strong>: Controls how white space inside an element is handled.
+                <ul>
+                    <li>Example: <code>white-space: nowrap;</code> /* Prevents text from wrapping</li>
+                </ul>
+            </li>
+            <li><strong>Overflow</strong>: Specifies how to handle overflowed text.
+                <ul>
+                    <li>Example: <code>overflow: hidden;</code> /* Hides text that overflows</li>
+                </ul>
+            </li>
+            <li><strong>Direction</strong>: Sets the text direction, useful for languages that read right to left.
+                <ul>
+                    <li>Example: <code>direction: rtl;</code> /* Sets text direction to right-to-left</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic5">
+    <label for="topic5">Colors, Backgrounds, and Gradients</label>
+    <div class="content">
+        <h2>Colors in CSS</h2>
+        <p>Colors can be specified in various ways in CSS, enabling flexibility in design.</p>
+
+        <h3>Color Formats</h3>
+        <ul>
+            <li><strong>Named Colors</strong>: CSS supports a set of predefined color names (e.g., <code>red</code>, <code>blue</code>, <code>green</code>).</li>
+            <li><strong>Hexadecimal Colors</strong>: Colors can be represented using a hex code, starting with a <code>#</code> followed by six or three hexadecimal digits.
+                <ul>
+                    <li>Example: <code>#ff0000</code> (red), <code>#f00</code> (shorthand for red).</li>
+                </ul>
+            </li>
+            <li><strong>RGB Colors</strong>: Colors can be defined using the RGB (Red, Green, Blue) model with values ranging from 0 to 255.
+                <ul>
+                    <li>Example: <code>color: rgb(255, 0, 0);</code> /* Red</li>
+                </ul>
+            </li>
+            <li><strong>RGBA Colors</strong>: Similar to RGB, but includes an alpha value for opacity (0 to 1).
+                <ul>
+                    <li>Example: <code>color: rgba(255, 0, 0, 0.5);</code> /* Semi-transparent red</li>
+                </ul>
+            </li>
+            <li><strong>HSL Colors</strong>: Colors can also be defined using the HSL (Hue, Saturation, Lightness) model.
+                <ul>
+                    <li>Example: <code>color: hsl(0, 100%, 50%);</code> /* Red</li>
+                </ul>
+            </li>
+            <li><strong>HSLA Colors</strong>: Similar to HSL, but includes an alpha value for opacity.
+                <ul>
+                    <li>Example: <code>color: hsla(0, 100%, 50%, 0.5);</code> /* Semi-transparent red</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Backgrounds in CSS</h2>
+        <p>Backgrounds can be applied to any element, allowing for enhanced design and visual interest.</p>
+
+        <h3>Background Properties</h3>
+        <ul>
+            <li><strong>background-color</strong>: Sets the background color of an element.
+                <ul>
+                    <li>Example: <code>background-color: #f0f0f0;</code> /* Light gray background</li>
+                </ul>
+            </li>
+            <li><strong>background-image</strong>: Applies an image as the background of an element.
+                <ul>
+                    <li>Example: <code>background-image: url('image.jpg');</code></li>
+                </ul>
+            </li>
+            <li><strong>background-repeat</strong>: Controls the repetition of the background image. Values include:
+                <ul>
+                    <li><code>repeat</code> (default)</li>
+                    <li><code>no-repeat</code></li>
+                    <li><code>repeat-x</code></li>
+                    <li><code>repeat-y</code></li>
+                </ul>
+            </li>
+            <li><strong>background-position</strong>: Sets the starting position of a background image.
+                <ul>
+                    <li>Example: <code>background-position: center;</code> /* Center the image</li>
+                </ul>
+            </li>
+            <li><strong>background-size</strong>: Defines the size of the background image.
+                <ul>
+                    <li>Example: <code>background-size: cover;</code> /* Cover the entire element</li>
+                </ul>
+            </li>
+            <li><strong>background-attachment</strong>: Determines how the background image behaves when scrolling.
+                <ul>
+                    <li>Values: <code>scroll</code>, <code>fixed</code>, <code>local</code></li>
+                </ul>
+            </li>
+            <li><strong>Shorthand Property</strong>: All background properties can be set using the shorthand <code>background</code> property.
+                <ul>
+                    <li>Example: <code>background: #fff url('image.jpg') no-repeat center / cover;</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Gradients in CSS</h2>
+        <p>Gradients allow for smooth transitions between colors and can be used as background images.</p>
+
+        <h3>Types of Gradients</h3>
+        <ul>
+            <li><strong>Linear Gradient</strong>: A gradient that transitions along a straight line.
+                <ul>
+                    <li>Syntax: <code>background: linear-gradient(direction, color-stop1, color-stop2, ...);</code></li>
+                    <li>Example: <code>background: linear-gradient(to right, red, yellow);</code> /* Horizontal gradient</li>
+                </ul>
+            </li>
+            <li><strong>Radial Gradient</strong>: A gradient that radiates from a central point.
+                <ul>
+                    <li>Syntax: <code>background: radial-gradient(shape size at position, color-stop1, color-stop2, ...);</code></li>
+                    <li>Example: <code>background: radial-gradient(circle, red, yellow);</code> /* Circular gradient</li>
+                </ul>
+            </li>
+            <li><strong>Conic Gradient</strong>: A gradient that rotates around a center point.
+                <ul>
+                    <li>Syntax: <code>background: conic-gradient(color-stop1, color-stop2, ...);</code></li>
+                    <li>Example: <code>background: conic-gradient(red, yellow, green);</code> /* Conic gradient</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Gradient Color Stops</h3>
+        <p><strong>Color Stops</strong>: Define the colors used in the gradient and their positions (optional). You can specify color stop positions using percentages or lengths.</p>
+        <p>Example: <code>background: linear-gradient(to right, red 0%, yellow 50%, green 100%);</code></p>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic6">
+    <label for="topic6">Responsive Design and Media Queries</label>
+    <div class="content">
+        <h2>Responsive Design</h2>
+        <p>Responsive Design is an approach to web development that ensures web pages look good and function well on various devices, including desktops, tablets, and smartphones. The primary goal is to provide an optimal user experience regardless of the device being used.</p>
+
+        <h3>Key Principles of Responsive Design</h3>
+        <ul>
+            <li><strong>Fluid Grids</strong>: Use relative units (percentages, ems, rems) instead of fixed units (pixels) for layout elements.
+                <ul>
+                    <li>This approach ensures that elements scale proportionally based on the size of the viewport.</li>
+                </ul>
+            </li>
+            <li><strong>Flexible Images</strong>: Images should be responsive and scale according to the size of their containing element.
+                <ul>
+                    <li>Use CSS to set images to <code>max-width: 100%;</code> to prevent them from exceeding their container’s width.</li>
+                    <li>Example: <code>img { max-width: 100%; height: auto; }</code></li>
+                </ul>
+            </li>
+            <li><strong>Media Queries</strong>: A key technique in responsive design that allows you to apply different styles based on the characteristics of the device.</li>
+        </ul>
+
+        <h2>Media Queries</h2>
+        <p>Media Queries are a CSS feature that allows you to apply styles based on specific conditions, such as the width or height of the viewport. They are essential for implementing responsive design.</p>
+
+        <h3>Syntax of Media Queries</h3>
+        <p>The basic syntax of a media query is as follows:</p>
+        <code>@media (condition) { /* CSS rules here */ }</code>
+
+        <h3>Common Conditions</h3>
+        <ul>
+            <li><strong>Width</strong>: Target specific device widths.
+                <ul>
+                    <li>Example: <code>@media (max-width: 600px) { /* Styles for devices with a width of 600px or less */ }</code></li>
+                </ul>
+            </li>
+            <li><strong>Height</strong>: Target specific device heights.
+                <ul>
+                    <li>Example: <code>@media (min-height: 800px) { /* Styles for devices with a height of 800px or more */ }</code></li>
+                </ul>
+            </li>
+            <li><strong>Orientation</strong>: Apply styles based on the orientation of the device (portrait or landscape).
+                <ul>
+                    <li>Example: <code>@media (orientation: landscape) { /* Styles for landscape orientation */ }</code></li>
+                </ul>
+            </li>
+            <li><strong>Resolution</strong>: Target high-resolution screens.
+                <ul>
+                    <li>Example: <code>@media (min-resolution: 2dppx) { /* Styles for high-resolution devices */ }</code></li>
+                </ul>
+            </li>
+            <li><strong>Combining Conditions</strong>: Combine multiple conditions using <code>and</code>, <code>or</code>, or <code>not</code>.
+                <ul>
+                    <li>Example: <code>@media (max-width: 600px) and (orientation: portrait) { /* Styles for portrait orientation on small screens */ }</code></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Best Practices for Responsive Design and Media Queries</h2>
+        <ul>
+            <li><strong>Mobile-First Approach</strong>: Start by designing for the smallest screen sizes and enhance for larger screens using media queries.</li>
+            <li><strong>Breakpoints</strong>: Choose breakpoints based on content needs rather than specific devices. Common breakpoints include:
+                <ul>
+                    <li>320px (mobile)</li>
+                    <li>768px (tablet)</li>
+                    <li>1024px (desktop)</li>
+                </ul>
+            </li>
+            <li><strong>Test on Multiple Devices</strong>: Regularly test your designs on various devices and screen sizes.</li>
+            <li><strong>Use Relative Units</strong>: Use relative units for fonts, margins, and paddings to maintain proportionality across devices.</li>
+            <li><strong>Avoid Fixed Widths</strong>: Refrain from using fixed widths for containers; use percentages or flexible units.</li>
+            <li><strong>Viewport Meta Tag</strong>: Include the viewport meta tag in your HTML to control layout on mobile browsers:
+                <ul>
+                    <li>Example: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic7">
+    <label for="topic7">Transitions, Animations AND Transformations</label>
+    <div class="content">
+        <h2>Transitions</h2>
+        <p>CSS Transitions allow you to change property values smoothly over a specified duration.</p>
+
+        <h3>Key Properties of Transitions</h3>
+        <ul>
+            <li><strong>transition-property</strong>: CSS property to be transitioned.</li>
+            <li><strong>transition-duration</strong>: Duration of the transition.</li>
+            <li><strong>transition-timing-function</strong>: Speed curve of the transition.</li>
+            <li><strong>transition-delay</strong>: Delay before the transition starts.</li>
+        </ul>
+
+        <h3>Example of CSS Transitions</h3>
+        <code>
+            .box {<br>
+            background-color: blue;<br>
+            width: 100px;<br>
+            height: 100px;<br>
+            transition: background-color 0.5s ease;<br>
+            }<br>
+            .box:hover {<br>
+            background-color: red;<br>
+            transform: scale(1.5);<br>
+            }
+        </code>
+
+        <h2>Animations</h2>
+        <p>CSS Animations provide more control and flexibility than transitions.</p>
+
+        <h3>Key Properties of Animations</h3>
+        <ul>
+            <li><strong>animation-name</strong>: Name of the animation.</li>
+            <li><strong>animation-duration</strong>: Length of the animation cycle.</li>
+            <li><strong>animation-timing-function</strong>: Animation progression.</li>
+            <li><strong>animation-delay</strong>: Delay before the animation starts.</li>
+            <li><strong>animation-iteration-count</strong>: Number of times to repeat the animation.</li>
+        </ul>
+
+        <h3>Example of CSS Animations</h3>
+        <code>
+            @keyframes slide {<br>
+            0% {<br>
+            transform: translateX(0);<br>
+            opacity: 1;<br>
+            }<br>
+            100% {<br>
+            transform: translateX(100px);<br>
+            opacity: 0.5;<br>
+            }<br>
+            }<br>
+            .animated-box {<br>
+            width: 100px;<br>
+            height: 100px;<br>
+            background-color: green;<br>
+            animation: slide 2s ease-in-out infinite;<br>
+            }
+        </code>
+
+        <h2>Transformations</h2>
+        <p>CSS Transformations manipulate elements by changing their size, position, and shape.</p>
+
+        <h3>Common Transformation Functions</h3>
+        <ul>
+            <li><strong>translate(x, y)</strong>: Moves the element.</li>
+            <li><strong>scale(x, y)</strong>: Resizes the element.</li>
+            <li><strong>rotate(deg)</strong>: Rotates the element.</li>
+        </ul>
+
+        <h3>Example of CSS Transformations</h3>
+        <code>
+            .transform-box {<br>
+            width: 100px;<br>
+            height: 100px;<br>
+            background-color: orange;<br>
+            transform: rotate(45deg) scale(1.5);<br>
+            }
+        </code>
+
+        <h2>Combining Techniques</h2>
+        <p>Transitions, animations, and transformations can be combined for engaging user experiences.</p>
+
+        <h3>Example of Combining Techniques</h3>
+        <code>
+            .box {<br>
+            width: 100px;<br>
+            height: 100px;<br>
+            background-color: purple;<br>
+            transition: transform 0.5s ease;<br>
+            }<br>
+            .box:hover {<br>
+            transform: rotate(90deg) scale(1.2);<br>
+            }
+        </code>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li><strong>Use Sparingly</strong>: Avoid overwhelming users.</li>
+            <li><strong>Performance</strong>: Use hardware-accelerated properties.</li>
+            <li><strong>Accessibility</strong>: Consider users with motion sensitivity.</li>
+        </ul>
+    </div>
+    <br><br> 
+    <input type="checkbox" id="topic8">
+    <label for="topic8">CSS Variables (Custom properties) and Units</label>
+    <div class="content">
+        <h2>CSS Variables (Custom Properties)</h2>
+
+        <h3>What are CSS Variables?</h3>
+        <p>CSS Variables, also known as custom properties, are entities defined by CSS authors that contain specific values to be reused throughout a document.</p>
+
+        <h3>Syntax</h3>
+        <p>CSS variables are defined using the <code>--</code> prefix and can be declared within a selector.</p>
+        <code>
+            :root {<br>
+            --main-color: #3498db;<br>
+            --font-size: 16px;<br>
+            }
+        </code>
+
+        <h3>Usage</h3>
+        <p>To use a CSS variable, use the <code>var()</code> function.</p>
+        <code>
+            body {<br>
+            background-color: var(--main-color);<br>
+            font-size: var(--font-size);<br>
+            }
+        </code>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li><strong>Reusability</strong>: Define once and reuse throughout the CSS.</li>
+            <li><strong>Maintainability</strong>: Change a variable value in one place to update multiple elements.</li>
+            <li><strong>Dynamic Changes</strong>: Variables can be changed with JavaScript, allowing for dynamic styling.</li>
+        </ul>
+
+        <h3>Scope</h3>
+        <p>CSS variables have a scope similar to CSS selectors. Variables defined in a parent element can be accessed by child elements.</p>
+        <code>
+            .container {<br>
+            --padding: 10px;<br>
+            }<br>
+            .child {<br>
+            padding: var(--padding);<br>
+            }
+        </code>
+
+        <h2>Units in CSS</h2>
+
+        <h3>Types of Units</h3>
+        <ul>
+            <li><strong>Absolute Units</strong>: Fixed sizes that do not change with screen size.<br>
+                Examples: <code>px</code> (pixels), <code>cm</code> (centimeters), <code>in</code> (inches), <code>pt</code> (points), <code>pc</code> (picas).</li>
+            <li><strong>Relative Units</strong>: Sizes that are relative to other elements or the viewport.<br>
+                Examples:
+                <ul>
+                    <li><code>em</code>: Relative to the font size of the element.</li>
+                    <li><code>rem</code>: Relative to the font size of the root element.</li>
+                    <li><code>%</code>: Percentage of the parent element's size.</li>
+                    <li><code>vw</code>: Viewport width (1% of the viewport width).</li>
+                    <li><code>vh</code>: Viewport height (1% of the viewport height).</li>
+                    <li><code>vmin</code> and <code>vmax</code>: Relative to the smaller or larger dimension of the viewport.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Examples</h3>
+        <p>Using <code>pixels</code>:</p>
+        <code>
+            div {<br>
+            width: 300px;<br>
+            height: 200px;<br>
+            }
+        </code>
+        <p>Using <code>percentages</code>:</p>
+        <code>
+            .container {<br>
+            width: 80%;<br>
+            }
+        </code>
+        <p>Using <code>rem</code>:</p>
+        <code>
+            h1 {<br>
+            font-size: 2rem; /* 2 times the root font size */<br>
+            }
+        </code>
+
+        <h3>Choosing Units</h3>
+        <p><strong>Absolute units</strong> are useful for fixed dimensions, while <strong>relative units</strong> are preferred for responsive design. Use relative units for font sizes, margins, and padding to enhance accessibility and responsiveness.</p>
+    </div>
+    <br><br>  
+</body>
+</html>

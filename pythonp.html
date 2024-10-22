@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #B0C4DE;
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      font-size: 18px;
+      color: #007bff;
+      position: relative;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+    label:hover::after {
+      width: 100%;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+    input[type="checkbox"]:checked + label + .content {
+      display: block;
+    }
+    h1,h2{
+        color: #2C3E50;
+    }
+    code {
+        background-color: #f4f4f4;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    
+    <h1>PYTHON Programming notes</h1>
+    <p>Python is a high-level, interpreted programming language known for its readability and simplicity. Created by Guido van Rossum and first released in 1991, Python emphasizes code clarity and allows programmers to express concepts in fewer lines of code compared to other languages.<br><br>
+        <b>Key Features:</b>
+        <b>Readable Syntax:</b> Python's syntax is designed to be intuitive and easy to read, making it accessible for beginners.<br><br>
+        <b>Versatility:</b> Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.<br><br>
+        <b>Extensive Libraries:</b> It has a rich ecosystem of libraries and frameworks, such as NumPy for numerical computations, Pandas for data analysis, and Django for web development, enabling developers to work on a wide range of applications.<br><br>
+        <b>Cross-Platform:</b> Python can run on various operating systems, including Windows, macOS, and Linux, without requiring modification to the code.<br><br>
+        <b>Strong Community Support:</b> Python has a large, active community, which contributes to its continuous improvement and provides extensive documentation and resources.</p><br><br>
+    <input type="checkbox" id="topic1">
+    <label for="topic1">PYTHON Basics</label>
+    <div class="content">
+            <h2>1. Variables</h2>
+            <p><strong>Definition</strong>: Variables are used to store data values.</p>
+            <p><strong>Naming</strong>: Use meaningful names (e.g., <code>age</code>, <code>name</code>), and avoid starting with numbers or using special characters (except underscore <code>_</code>).</p>
+            <pre><code>age = 25
+        name = "Alice"</code></pre>
+
+            <h2>2. Data Types</h2>
+            <p><strong>Common Data Types</strong>:</p>
+            <ul>
+                <li><strong>Integer</strong>: Whole numbers (e.g., <code>5</code>)</li>
+                <li><strong>Float</strong>: Decimal numbers (e.g., <code>3.14</code>)</li>
+                <li><strong>String</strong>: Text (e.g., <code>"Hello"</code>)</li>
+                <li><strong>List</strong>: Ordered collection (e.g., <code>[1, 2, 3]</code>)</li>
+                <li><strong>Dictionary</strong>: Key-value pairs (e.g., <code>{"name": "Alice", "age": 25}</code>)</li>
+            </ul>
+
+            <h2>3. Basic Operations</h2>
+            <p><strong>Arithmetic Operations</strong>:</p>
+            <ul>
+                <li>Addition: <code>+</code></li>
+                <li>Subtraction: <code>-</code></li>
+                <li>Multiplication: <code>*</code></li>
+                <li>Division: <code>/</code></li>
+                <li>Modulus: <code>%</code> (remainder of division)</li>
+            </ul>
+            <pre><code>num1 = 10
+        num2 = 3
+        sum_result = num1 + num2  # 13
+        product_result = num1 * num2  # 30</code></pre>
+
+            <h2>4. Input and Output</h2>
+            <p><strong>Input</strong>: Use the <code>input()</code> function to take user input. By default, it returns a string.</p>
+            <pre><code>user_name = input("Enter your name: ")
+        print("Hello,", user_name)</code></pre>
+            <p><strong>Output</strong>: Use <code>print()</code> to display output.</p>
+            <pre><code>age = 30
+        print("Your age is:", age)</code></pre>
+
+            <h2>5. Type Conversion</h2>
+            <p><strong>Convert between data types</strong> using functions like <code>int()</code>, <code>float()</code>, and <code>str()</code>.</p>
+            <pre><code>num_str = "42"
+        num_int = int(num_str)  # Converts string to integer</code></pre>
+
+            <h2>6. Basic Conditional Statements</h2>
+            <p><strong>If Statements</strong>: Used to execute code based on conditions.</p>
+            <pre><code>age = 18
+        if age >= 18:
+            print("You are an adult.")
+        else:
+            print("You are a minor.")</code></pre>
+
+            <h2>7. Basic Loops</h2>
+            <p><strong>For Loop</strong>: Iterate over a sequence (like a list).</p>
+            <pre><code>for i in range(5):
+            print(i)  # Prints numbers 0 to 4</code></pre>
+            <p><strong>While Loop</strong>: Repeats as long as a condition is true.</p>
+            <pre><code>count = 0
+        while count &lt; 5:
+            print(count)
+            count += 1</code></pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic2">
+    <label for="topic2">Control Statements</label>
+    <div class="content">
+        <p>Control flow statements are used to dictate the order in which statements are executed in a program. Python primarily uses conditional statements and loops for controlling the flow of execution.</p>
+
+            <h2>1. Conditional Statements</h2>
+            <p>Conditional statements allow you to execute certain blocks of code based on specific conditions.</p>
+            
+            <ul>
+                <li><strong><code>if</code> Statement</strong>: Executes a block of code if the condition is true.</li>
+                <pre><code>if condition:
+            # code to execute if condition is true</code></pre>
+
+                <li><strong><code>else</code> Statement</strong>: Executes a block of code if the preceding <code>if</code> condition is false.</li>
+                <pre><code>if condition:
+            # code to execute if condition is true
+        else:
+            # code to execute if condition is false</code></pre>
+
+                <li><strong><code>elif</code> Statement</strong>: Short for "else if," it allows checking multiple conditions.</li>
+                <pre><code>if condition1:
+            # code for condition1
+        elif condition2:
+            # code for condition2
+        else:
+            # code if none of the above conditions are true</code></pre>
+
+                <li><strong>Example</strong>:
+                <pre><code>age = 20
+        if age < 18:
+            print("Minor")
+        elif age < 65:
+            print("Adult")
+        else:
+            print("Senior")</code></pre>
+                </li>
+            </ul>
+
+            <h2>2. Looping Statements</h2>
+            <p>Looping statements allow you to repeat a block of code multiple times.</p>
+
+            <ul>
+                <li><strong><code>for</code> Loop</strong>: Iterates over a sequence (like a list or range).</li>
+                <pre><code>for item in sequence:
+            # code to execute for each item</code></pre>
+
+                <li><strong>Example</strong>:
+                <pre><code>fruits = ["apple", "banana", "cherry"]
+        for fruit in fruits:
+            print(fruit)</code></pre>
+                </li>
+
+                <li><strong><code>while</code> Loop</strong>: Repeats a block of code as long as a specified condition is true.</li>
+                <pre><code>while condition:
+            # code to execute while condition is true</code></pre>
+
+                <li><strong>Example</strong>:
+                <pre><code>count = 0
+        while count &lt; 5:
+            print(count)
+            count += 1</code></pre>
+                </li>
+            </ul>
+
+            <h2>3. Control Statements within Loops</h2>
+            
+            <ul>
+                <li><strong><code>break</code> Statement</strong>: Exits the loop prematurely.</li>
+                <pre><code>for i in range(10):
+            if i == 5:
+                break  # Exits the loop when i is 5
+            print(i)</code></pre>
+
+                <li><strong><code>continue</code> Statement</strong>: Skips the current iteration and continues with the next iteration.</li>
+                <pre><code>for i in range(10):
+            if i % 2 == 0:
+                continue  # Skips even numbers
+            print(i)  # Prints odd numbers</code></pre>
+
+                <li><strong><code>pass</code> Statement</strong>: Does nothing; it is a placeholder.</li>
+                <pre><code>for i in range(5):
+            if i == 2:
+                pass  # Placeholder for future code
+            print(i)</code></pre>
+            </ul>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic3">
+    <label for="topic3">Functions</label>
+    <div class="content">
+        <p>Functions are reusable blocks of code that perform a specific task. They help in organizing code, making it modular and easier to maintain.</p>
+
+            <h2>1. Defining a Function</h2>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>def function_name(parameters):
+            # code to execute
+            return value  # optional</code></pre>
+
+            <p><strong>Example</strong>:</p>
+            <pre><code>def greet(name):
+            print("Hello, " + name + "!")</code></pre>
+
+            <h2>2. Calling a Function</h2>
+            <p>To execute a function, simply call it by its name and provide any required arguments.</p>
+            <pre><code>greet("Alice")  # Output: Hello, Alice!</code></pre>
+
+            <h2>3. Function Parameters</h2>
+            <p><strong>Positional Parameters</strong>: Parameters are assigned values based on their position.</p>
+            <pre><code>def add(a, b):
+            return a + b
+
+        result = add(5, 3)  # Output: 8</code></pre>
+
+            <p><strong>Default Parameters</strong>: Parameters can have default values.</p>
+            <pre><code>def greet(name="Guest"):
+            print("Hello, " + name + "!")
+
+        greet()        # Output: Hello, Guest!
+        greet("Alice")  # Output: Hello, Alice!</code></pre>
+
+            <p><strong>Keyword Parameters</strong>: You can pass parameters by explicitly naming them.</p>
+            <pre><code>def display_info(name, age):
+            print(f"Name: {name}, Age: {age}")
+
+        display_info(age=30, name="Bob")  # Output: Name: Bob, Age: 30</code></pre>
+
+            <h2>4. Return Statement</h2>
+            <p>A function can return a value using the <code>return</code> statement. If no return statement is provided, the function returns <code>None</code> by default.</p>
+            <pre><code>def multiply(x, y):
+            return x * y
+
+        result = multiply(4, 5)  # Output: 20</code></pre>
+
+            <h2>5. Function Scope</h2>
+            <p><strong>Local Variables</strong>: Variables defined inside a function are local to that function.</p>
+            <pre><code>def my_function():
+            local_var = 10
+            print(local_var)
+
+        my_function()  # Output: 10
+        # print(local_var)  # Error: NameError</code></pre>
+
+            <p><strong>Global Variables</strong>: Variables defined outside any function are global and can be accessed inside functions unless shadowed by a local variable.</p>
+            <pre><code>global_var = 5
+
+        def my_function():
+            print(global_var)  # Accessing global variable
+
+        my_function()  # Output: 5</code></pre>
+
+            <h2>6. Anonymous Functions (Lambda Functions)</h2>
+            <p>A lambda function is a small, unnamed function defined using the <code>lambda</code> keyword. It can take any number of arguments but can only have one expression.</p>
+            <pre><code>square = lambda x: x ** 2
+        print(square(4))  # Output: 16</code></pre>
+
+            <h2>7. Higher-Order Functions</h2>
+            <p>Functions that take other functions as arguments or return functions as their result.</p>
+            <pre><code>def apply_function(func, value):
+            return func(value)
+
+        result = apply_function(square, 5)  # Output: 25</code></pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic4">
+    <label for="topic4">Data Structures</label>
+    <div class="content">
+        <p>Data structures are essential for organizing and managing data efficiently. Python provides several built-in data structures that enable various ways of storing and manipulating data.</p>
+
+            <h2>1. Lists</h2>
+            <p><strong>Description</strong>: An ordered, mutable collection of items, allowing duplicate elements.</p>
+            <pre><code>my_list = [1, 2, 3, 4, 5]</code></pre>
+            <p><strong>Common Operations</strong>:</p>
+            <ul>
+                <li>Accessing elements: <code>my_list[0]</code>  (Output: <code>1</code>)</li>
+                <li>Adding elements: <code>my_list.append(6)</code></li>
+                <li>Removing elements: <code>my_list.remove(3)</code></li>
+                <li>Slicing: <code>my_list[1:4]</code>  (Output: <code>[2, 3, 4]</code>)</li>
+            </ul>
+
+            <h2>2. Tuples</h2>
+            <p><strong>Description</strong>: An ordered, immutable collection of items, allowing duplicate elements.</p>
+            <pre><code>my_tuple = (1, 2, 3, 4, 5)</code></pre>
+            <p><strong>Common Operations</strong>:</p>
+            <ul>
+                <li>Accessing elements: <code>my_tuple[0]</code>  (Output: <code>1</code>)</li>
+                <li>Slicing: <code>my_tuple[1:4]</code>  (Output: <code>(2, 3, 4)</code>)</li>
+            </ul>
+
+            <h2>3. Sets</h2>
+            <p><strong>Description</strong>: An unordered collection of unique items; duplicates are not allowed.</p>
+            <pre><code>my_set = {1, 2, 3, 4, 5}</code></pre>
+            <p><strong>Common Operations</strong>:</p>
+            <ul>
+                <li>Adding elements: <code>my_set.add(6)</code></li>
+                <li>Removing elements: <code>my_set.remove(3)</code></li>
+                <li>Set operations:</li>
+                <ul>
+                    <li>Union: <code>set1 | set2</code></li>
+                    <li>Intersection: <code>set1 &amp; set2</code></li>
+                    <li>Difference: <code>set1 - set2</code></li>
+                </ul>
+            </ul>
+
+            <h2>4. Dictionaries</h2>
+            <p><strong>Description</strong>: An unordered collection of key-value pairs, where keys must be unique.</p>
+            <pre><code>my_dict = {'name': 'Alice', 'age': 25}</code></pre>
+            <p><strong>Common Operations</strong>:</p>
+            <ul>
+                <li>Accessing values: <code>my_dict['name']</code>  (Output: <code>'Alice'</code>)</li>
+                <li>Adding key-value pairs: <code>my_dict['city'] = 'New York'</code></li>
+                <li>Removing key-value pairs: <code>del my_dict['age']</code></li>
+                <li>Keys and values: <code>my_dict.keys()</code>, <code>my_dict.values()</code></li>
+            </ul>
+
+            <h2>5. Strings</h2>
+            <p><strong>Description</strong>: Immutable sequences of characters. While not a data structure like the others, they are fundamental to data manipulation.</p>
+            <pre><code>my_string = "Hello, World!"</code></pre>
+            <p><strong>Common Operations</strong>:</p>
+            <ul>
+                <li>Accessing characters: <code>my_string[0]</code>  (Output: <code>'H'</code>)</li>
+                <li>Slicing: <code>my_string[0:5]</code>  (Output: <code>'Hello'</code>)</li>
+                <li>String methods: <code>.upper()</code>, <code>.lower()</code>, <code>.replace()</code>, <code>.split()</code></li>
+            </ul>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic5">
+    <label for="topic5">File Handling</label>
+    <div class="content">
+        <p>File handling is an essential aspect of programming that allows you to read from and write to files. Python provides built-in functions and methods to facilitate file operations.</p>
+            <h2>1. Opening a File</h2>
+            <p>To work with a file, you first need to open it using the <code>open()</code> function.</p>
+            <pre><code>file_object = open('filename', 'mode')</code></pre>
+            <p><strong>Modes</strong>:</p>
+            <ul>
+                <li><code>'r'</code>: Read (default) - Opens a file for reading.</li>
+                <li><code>'w'</code>: Write - Opens a file for writing (overwrites if exists).</li>
+                <li><code>'a'</code>: Append - Opens a file for appending (writes at the end).</li>
+                <li><code>'b'</code>: Binary - Opens a file in binary mode.</li>
+                <li><code>'x'</code>: Exclusive creation - Fails if the file already exists.</li>
+            </ul>
+            <p><strong>Example</strong>:</p>
+            <pre><code>file = open('example.txt', 'r')</code></pre>
+
+            <h2>2. Reading from a File</h2>
+            <p>You can read data from a file using various methods:</p>
+            <ul>
+                <li><code>read(size)</code>: Reads the entire file or a specified number of bytes.
+                    <pre><code>content = file.read()  # Reads the entire file</code></pre>
+                </li>
+                <li><code>readline()</code>: Reads a single line from the file.
+                    <pre><code>line = file.readline()</code></pre>
+                </li>
+                <li><code>readlines()</code>: Reads all lines and returns them as a list.
+                    <pre><code>lines = file.readlines()</code></pre>
+                </li>
+            </ul>
+
+            <h2>3. Writing to a File</h2>
+            <p>To write data to a file, you can use the following methods:</p>
+            <ul>
+                <li><code>write(string)</code>: Writes a string to the file.
+                    <pre><code>file = open('example.txt', 'w')</code></pre>
+                    <pre><code>file.write("Hello, World!")</code></pre>
+                </li>
+                <li><code>writelines(list)</code>: Writes a list of strings to the file.
+                    <pre><code>lines = ["Line 1\n", "Line 2\n"]</code></pre>
+                    <pre><code>file.writelines(lines)</code></pre>
+                </li>
+            </ul>
+
+            <h2>4. Closing a File</h2>
+            <p>It is crucial to close a file after completing operations to free up system resources.</p>
+            <pre><code>file.close()</code></pre>
+
+            <h2>5. Using <code>with</code> Statement</h2>
+            <p>Using the <code>with</code> statement is a best practice for file handling as it automatically closes the file after the block of code is executed.</p>
+            <pre><code>with open('example.txt', 'r') as file:
+            content = file.read()
+            # No need to explicitly close the file</code></pre>
+
+            <h2>6. Exception Handling</h2>
+            <p>File operations can lead to exceptions (e.g., file not found). Use <code>try</code> and <code>except</code> blocks to handle potential errors.</p>
+            <pre><code>try:
+                with open('nonexistent.txt', 'r') as file:
+                    content = file.read()
+            except FileNotFoundError:
+                print("File not found.")</code></pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic6">
+    <label for="topic6">Error Handling</label>
+    <div class="content">
+        <p>Error handling is crucial in programming as it allows developers to gracefully manage exceptions and errors that may occur during the execution of a program. In Python, this is primarily done using <code>try</code>, <code>except</code>, <code>finally</code>, and <code>else</code> blocks.</p>
+            <h2>1. Exceptions</h2>
+            <p><strong>Definition</strong>: Exceptions are events that disrupt the normal flow of a program. Common exceptions include <code>ZeroDivisionError</code>, <code>TypeError</code>, <code>ValueError</code>, and <code>FileNotFoundError</code>.</p>
+            <p><strong>Raising Exceptions</strong>: You can raise exceptions using the <code>raise</code> statement.</p>
+            <pre><code>raise ValueError("Invalid value")</code></pre>
+
+            <h2>2. Using <code>try</code> and <code>except</code></h2>
+            <p>The <code>try</code> block lets you test a block of code for errors, while the <code>except</code> block allows you to handle the error.</p>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>try:
+            # Code that may cause an exception
+        except SomeException:
+            # Code to handle the exception</code></pre>
+            <p><strong>Example</strong>:</p>
+            <pre><code>try:
+            result = 10 / 0
+        except ZeroDivisionError:
+            print("You can't divide by zero!")</code></pre>
+
+            <h2>3. Catching Multiple Exceptions</h2>
+            <p>You can handle multiple exceptions in a single <code>except</code> block by specifying a tuple of exceptions.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>try:
+            x = int(input("Enter a number: "))
+            result = 10 / x
+        except (ValueError, ZeroDivisionError) as e:
+            print(f"An error occurred: {e}")</code></pre>
+
+            <h2>4. Using <code>else</code> Block</h2>
+            <p>The <code>else</code> block can be used to execute code that should run only if the <code>try</code> block did not raise an exception.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>try:
+            result = 10 / 2
+        except ZeroDivisionError:
+            print("Division by zero!")
+        else:
+            print(f"Result is {result}")</code></pre>
+
+            <h2>5. Using <code>finally</code> Block</h2>
+            <p>The <code>finally</code> block will execute regardless of whether an exception was raised or not. It’s commonly used for cleanup actions.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>try:
+            file = open('example.txt', 'r')
+            content = file.read()
+        except FileNotFoundError:
+            print("File not found.")
+        finally:
+            file.close()  # This will execute no matter what</code></pre>
+
+            <h2>6. Raising Exceptions</h2>
+            <p>You can raise exceptions manually using the <code>raise</code> statement. This is useful for enforcing conditions in your code.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>def divide(a, b):
+            if b == 0:
+                raise ValueError("The denominator cannot be zero.")
+            return a / b
+
+        try:
+            divide(10, 0)
+        except ValueError as e:
+            print(e)</code></pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic7">
+    <label for="topic7">Object Oriented Programming(OOP)</label>
+    <div class="content">
+        <p>Object-oriented programming is a programming paradigm that uses "objects" to represent data and methods to manipulate that data. OOP helps organize code in a way that makes it easier to manage and reuse.</p>
+
+            <h2>1. Key Concepts of OOP</h2>
+            <ul>
+                <li><strong>Classes</strong>: A class is a blueprint for creating objects. It defines attributes (data) and methods (functions) that the created objects will have.</li>
+                <li><strong>Objects</strong>: An instance of a class. Objects can contain data (attributes) and can perform actions (methods).</li>
+                <li><strong>Encapsulation</strong>: The bundling of data (attributes) and methods that operate on that data within a single unit (class). It restricts direct access to some of the object's components.</li>
+                <li><strong>Inheritance</strong>: A mechanism that allows one class to inherit attributes and methods from another class, promoting code reusability.</li>
+                <li><strong>Polymorphism</strong>: The ability to present the same interface for different underlying data types. In Python, this is achieved through method overriding and duck typing.</li>
+            </ul>
+
+            <h2>2. Defining a Class</h2>
+            <p>You can define a class in Python using the <code>class</code> keyword.</p>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>class ClassName:
+            # Class attributes and methods
+        </code></pre>
+            <p><strong>Example</strong>:</p>
+            <pre><code>class Dog:
+            def __init__(self, name, age):
+                self.name = name  # Attribute
+                self.age = age    # Attribute
+
+            def bark(self):      # Method
+                print("Woof!")
+        </code></pre>
+
+            <h2>3. Creating an Object</h2>
+            <p>To create an object from a class, you call the class as if it were a function.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>my_dog = Dog("Buddy", 3)  # Creating an object of the Dog class</code></pre>
+
+            <h2>4. Accessing Attributes and Methods</h2>
+            <p>You can access an object's attributes and methods using the dot (<code>.</code>) notation.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>print(my_dog.name)  # Accessing an attribute
+        my_dog.bark()       # Calling a method</code></pre>
+
+            <h2>5. Inheritance</h2>
+            <p>You can create a new class that inherits attributes and methods from an existing class.</p>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>class ChildClass(ParentClass):
+            # Additional attributes and methods
+        </code></pre>
+            <p><strong>Example</strong>:</p>
+            <pre><code>class Puppy(Dog):  # Puppy inherits from Dog
+            def wag_tail(self):
+                print("Wagging tail!")
+            
+        my_puppy = Puppy("Max", 1)
+        my_puppy.bark()   # Inherited method
+        my_puppy.wag_tail()  # Own method</code></pre>
+
+            <h2>6. Polymorphism</h2>
+            <p>Polymorphism allows methods to do different things based on the object calling them. This is often achieved through method overriding.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>class Cat:
+            def bark(self):
+                print("Meow!")
+
+        def make_sound(animal):
+            animal.bark()  # Different animals can use the same method name
+
+        my_cat = Cat()
+        make_sound(my_cat)  # Outputs: Meow!</code></pre>
+
+            <h2>7. Encapsulation</h2>
+            <p>Encapsulation is achieved by using private attributes and methods. You can prefix an attribute or method with an underscore (<code>_</code>) or double underscore (<code>__</code>) to make it private.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>class BankAccount:
+            def __init__(self, balance):
+                self.__balance = balance  # Private attribute
+
+            def deposit(self, amount):
+                self.__balance += amount
+
+            def get_balance(self):
+                return self.__balance</code></pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic8">
+    <label for="topic8">Module</label>
+    <div class="content">
+        <p>A module is a file containing Python code that can define functions, classes, and variables. Modules help organize code into manageable sections, promoting code reuse and maintaining a clean namespace.</p>
+
+            <h2>1. What is a Module?</h2>
+            <p><strong>Definition</strong>: A module is a file with a <code>.py</code> extension that contains Python definitions and statements.</p>
+            <p><strong>Purpose</strong>: Modules allow you to logically organize your Python code and reuse code across different programs.</p>
+
+            <h2>2. Creating a Module</h2>
+            <p>You can create a module simply by writing Python code in a file and saving it with a <code>.py</code> extension.</p>
+            <p><strong>Example</strong>: Create a file named <code>mymodule.py</code> with the following content:</p>
+            <pre><code>def greet(name):
+            return f"Hello, {name}!"
+
+        PI = 3.14159
+        </code></pre>
+
+            <h2>3. Importing a Module</h2>
+            <p>You can use the <code>import</code> statement to include a module in your program.</p>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>import module_name</code></pre>
+            <p><strong>Example</strong>:</p>
+            <pre><code>import mymodule
+
+        print(mymodule.greet("Alice"))  # Outputs: Hello, Alice!
+        print(mymodule.PI)               # Outputs: 3.14159
+        </code></pre>
+
+            <h2>4. Importing Specific Functions or Variables</h2>
+            <p>You can import specific functions or variables from a module to avoid namespace clutter.</p>
+            <p><strong>Syntax</strong>:</p>
+            <pre><code>from module_name import function_name</code></pre>
+            <p><strong>Example</strong>:</p>
+            <pre><code>from mymodule import greet
+
+        print(greet("Bob"))  # Outputs: Hello, Bob!
+        </code></pre>
+
+            <h2>5. Importing All Functions from a Module</h2>
+            <p>You can import everything from a module using the asterisk (<code>*</code>), but this is generally discouraged as it can lead to unclear code.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>from mymodule import *
+
+        print(greet("Charlie"))  # Outputs: Hello, Charlie!
+        </code></pre>
+
+            <h2>6. Aliasing Modules</h2>
+            <p>You can give a module or a function an alias using the <code>as</code> keyword, which can simplify references to it.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>import mymodule as mm
+
+        print(mm.greet("David"))  # Outputs: Hello, David!
+        </code></pre>
+
+            <h2>7. Standard Modules</h2>
+            <p>Python comes with a set of built-in modules (also called standard libraries) that provide various functionalities, such as:</p>
+            <ul>
+                <li><code>math</code>: Mathematical functions (e.g., <code>math.sqrt()</code>).</li>
+                <li><code>random</code>: Generate random numbers (e.g., <code>random.randint()</code>).</li>
+                <li><code>os</code>: Interact with the operating system (e.g., <code>os.getcwd()</code>).</li>
+                <li><code>sys</code>: Access system-specific parameters and functions (e.g., <code>sys.exit()</code>).</li>
+            </ul>
+
+            <h2>8. Creating Packages</h2>
+            <p>A package is a collection of modules organized in a directory hierarchy. To create a package, follow these steps:</p>
+            <ol>
+                <li>Create a directory for your package.</li>
+                <li>Add an <code>__init__.py</code> file (can be empty) to the directory to mark it as a package.</li>
+                <li>Add your module files inside this directory.</li>
+            </ol>
+            <p><strong>Example Directory Structure</strong>:</p>
+            <pre><code>mypackage/
+            __init__.py
+            module1.py
+            module2.py
+        </code></pre>
+
+            <h2>9. Importing Packages</h2>
+            <p>You can import modules from a package using the dot notation.</p>
+            <p><strong>Example</strong>:</p>
+            <pre><code>from mypackage import module1</code></pre>
+    </div>
+    <br><br>
+</body>
+</html>

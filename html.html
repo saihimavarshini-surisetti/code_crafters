@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<style>
+    body{
+        background-color: #B0C4DE;
+    }
+    summary {
+        font-size: 18px;
+        color:rgb(11, 11, 11);
+        cursor: pointer;
+    }
+
+    summary:hover {
+        color: #0056b3;
+    }
+
+    details {
+        margin-top: 10px;
+    }
+
+    details[open] summary {
+        color: #333;
+    }
+
+    #k {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: whitesmoke;
+    }
+        footer{
+            display:flex;
+           margin-top: 100px;
+           margin-bottom: 10px;
+            background-color: rgb(75, 75, 87);
+           }footer li a
+           {
+            color:white;
+            padding:10px;
+           }h3
+           {
+            color:white;
+           }.area
+           {
+             margin-left: 190px;
+             margin-top: 20px;
+             margin-bottom: 20px;
+           }
+           li a{
+            text-decoration: none;
+           }
+           .last{
+          display: flex;
+           }
+    
+           .footer{
+            width: 100;
+            text-align: center;
+            padding: 30px 0;
+         }
+         .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+         }
+         .icons .bi{
+            color: #f44336;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+         }
+         .bi-heart{
+            color: #f44336;
+         }
+         #p{
+            color: #777;
+         }
+         nav
+         {
+            display:flex;
+         }img
+         {
+            border-radius: 20px;
+         }
+         #logo
+         {
+            display:flex;
+            width:75px;
+            height:75px;
+            margin-top: 10px;
+            padding-left: 10px;
+            
+         }#logo1
+         {
+            display: flex;
+            margin-left: 60px;
+            margin-top: 8px;   
+            font-size: 38px;        
+         }
+         #navbar ul
+         {
+            display:flex;
+            margin-top: 20px;
+            padding-left: 10px;
+         }
+         #navbar li a
+        {
+        border-radius: 8px;
+        padding:10px;
+        margin-left: 15px;
+        font-size: 20px;
+        text-decoration: none;
+        color:rgb(237, 230, 230);
+       }
+       #navbar li a:hover
+        {
+        background-color: black;
+        color:rgb(221, 223, 224);
+       } li
+       {
+        list-style: none;
+       }.search
+       {
+       margin-top: 15px;
+        margin-left: 500px;
+        display: flex;
+        height:40px;
+       
+       }.search input{
+        padding:5px;
+        border-radius: 10px;
+       }
+    
+       .aboutus{
+        height: 40vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(snaps/mine.jpg);
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        color: #fff;
+    }
+    #w{
+        text-decoration: none;
+
+    }
+    h1{
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 15px;
+    }
+    #j{
+        color: white;
+    }
+    #y{
+        text-align: center;
+    }
+</style>
+
+<body>
+    <section class="aboutus">
+        <nav id="navbar">
+         <div id="logo">
+           <img src="snaps/main.jpg">
+           </div>
+            <ul>
+               <li class="item"><a href="yamuna.html">Home</a></li>
+               <li class="item"><a href="notes.html">Notes</a></li>
+               <li class="item"><a href="mercy.html">Problems</a></li>
+               <li class="item"><a href="aboutus.html">About Us</a></li>
+               <li class="item"><a href="contactus.html">Contact Us</a></li>
+             </ul>
+           <div class="search">
+               <input type="text" placeholder="Search">
+           </div>
+           <div id="logo1">
+            <a href="login2.html" id="j"><i class="bi bi-person-circle"></i></a>
+           </div>
+      </nav>
+
+   </section>
+    <h1>HTML Practice Questions</h1>
+    <div>
+        <details>
+            <summary>HTML Structure</summary>
+            <p id="k">1.Create a basic HTML page with a title, a heading, and a paragraph inside the body.</p>
+            <p id="k">2.Add a <b>< meta ></b>tag to specify the character encoding as UTF-8.</p>
+            <p id="k">3.Create a webpage that includes a <b>lang</b> attribute in the <b>< html ></b> tag for English.</p>
+            <p id="k">4.Define the document type in your HTML file for HTML5.</p>
+            <p id="k">5.Add a comment in your HTML code that describes what each section does.</p>
+            <p id="k">6.Create a webpage with a heading inside the <b>< header ></b> and a footer inside the <b>< footer ></b>.</p>
+            <p id="k">7.Add an icon to the browser tab using the <b>< link ></b> element for a favicon in the <b>< head ></b>.</p>
+            <p id="k">8.Add a document title and metadata, then open the webpage in a browser to see how they appear.</p>
+            <p id="k">9.Add two paragraphs to the body. One should have inline text, and the other should have block-level text.</p>
+            <p id="k">10.Add a viewport meta tag for mobile responsiveness.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary>Elements and Tags</summary>
+            <p id="k">1.Create an HTML document with an ordered list and an unordered list.</p>
+            <p id="k">2.Add an image to a webpage and set its width to 300px.</p>
+            <p id="k">3.Create a webpage with a hyperlink that opens in a new tab.</p>
+            <p id="k">4.Create a hyperlink that navigates to another section of the same webpage using an ID.</p>
+            <p id="k">5.Create a webpage with an image that does not load and display alternative text.</p>
+            <p id="k">6.Add a list of links to three external websites using the <b>< a ></b> tag.</p>
+            <p id="k">7.Create a table with three rows and three columns.</p>
+            <p id="k">8.Use the <b>< br></b> tag to break a long line of text into two lines within a paragraph.</p>
+            <p id="k">9.Embed a video using the <b>< iframe ></b>tag on a webpage.</p>
+            <p id="k">10.Create a button inside a <b>< div ></b> that, when clicked, does nothing for now.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary>Attributes</summary>
+            <p id="k">1.Create an image with an <b>alt</b> attribute that describes the image.</p>
+            <p id="k">2.Add a link with a <b>title</b> attribute that displays text when hovered over.</p>
+            <p id="k">3.Create two elements with different <b>id</b> attributes and link to them with an anchor.</p>
+            <p id="k">4.Add a button with a <b>disabled</b> attribute.</p>
+            <p id="k">5.Create an image with a <b>src</b> attribute that points to a local file.</p>
+            <p id="k">6.Add an <b>href</b> attribute to a link that redirects to a different webpage.</p>
+            <p id="k">7.Create a text box and assign a <b>name</b> attribute for form submission.</p>
+            <p id="k">8.Add a <b>placeholder</b> attribute to an input field to show default text.</p>
+            <p id="k">9.Create a link that opens in a new tab using the <b>target="_blank"</b> attribute.</p>
+            <p id="k">10.Create a form with an <b>action</b> attribute that submits data to another page.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary>Forms</summary>
+            <p id="k">1.Create a form with two text inputs and a submit button.</p>
+            <p id="k">2.Add a password field to a form with the <b>type="password"</b> attribute.</p>
+            <p id="k">3.Create a dropdown list using the <b>< select ></b> and <b>< option ></b> tags.</p>
+            <p id="k">4.Add a radio button group for selecting a user's gender.</p>
+            <p id="k">5.Create a checkbox group for selecting multiple hobbies in a form.</p>
+            <p id="k">6.Add a text area for user comments in a form.</p>
+            <p id="k">7.Create a form with a <b>"Reset"</b> button that clears all inputs.</p>
+            <p id="k">8.Add an email input field that validates the email format when the form is submitted.</p>
+            <p id="k">9.Create a form with a submit button that sends data using the <b>POST</b> method.</p>
+            <p id="k">10.Add a file input field that allows users to upload a file.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary> Tables</summary>
+            <p id="k">1.Create a table with three rows and two columns.</p>
+            <p id="k">2.Add a header row to a table using the <b>< th ></b> tag.</p>
+            <p id="k">3.Merge two cells in the same row using the <b>colspan</b> attribute.</p>
+            <p id="k">4.Create a table with alternating row background colors.</p>
+            <p id="k">5.Add a caption to a table to describe its content.</p>
+            <p id="k">6.Create a table with three columns and set the width of each column.</p>
+            <p id="k">7.Add a border to a table and adjust the padding inside table cells.</p>
+            <p id="k">8.Create a table with one header row and two body rows.</p>
+            <p id="k">9.Align text to the right in a specific table column.</p>
+            <p id="k">10.Create a table with different background colors for the header, body, and footer.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary>Semantic HTML</summary>
+            <p id="k">1.Create a webpage with a <b>< header ></b>, <b>< main ></b>, and <b>< footer ></b>.</p>
+            <p id="k">2.Use the <b>< article ></b> tag to create a section of content for a blog post.</p>
+            <p id="k">3.Add a <b>< nav ></b> element with links to different sections of the website.</p>
+            <p id="k">4.Create a sidebar using the <b>< aside ></b> element.</p>
+            <p id="k">5.Use the <b>< section ></b> tag to divide content into distinct sections.</p>
+            <p id="k">6.Create a navigation bar using the <b>< nav ></b> element with links inside.</p>
+            <p id="k">7.Use the <b>< time ></b> tag to display a specific date on the webpage.</p>
+            <p id="k">8.Add an address in the <b>< address ></b> tag inside a footer.</p>
+            <p id="k">9.Use the <b>< mark ></b> tag to highlight text in a paragraph.</p>
+            <p id="k">10.Add a <b>< details ></b> element with hidden content that can be toggled.</p>
+        </details>
+        <br><br>
+        <details>
+            <summary>Multimedia</summary>
+            <p id="k">1.Add an image to a webpage using the <b>< img ></b> tag.</p>
+            <p id="k">2.Embed a YouTube video using the <b>< iframe ></b> tag.</p>
+            <p id="k">3.Add an audio file to a webpage using the <b>< audio ></b> tag with controls.</p>
+            <p id="k">4.Add a video that starts playing automatically when the page loads.</p>
+            <p id="k">5.Create an image gallery with two images side by side.</p>
+            <p id="k">6.Add an audio file with a play and pause button.</p>
+            <p id="k">7.Create an audio element that loops continuously.</p>
+            <p id="k">8.Add an image that links to another webpage.</p>
+            <p id="k">9.Create a webpage with an audio element that starts muted.</p>
+            <p id="k">10.Add a video with both video and audio tracks specified in the <b>< source ></b> tag.</p>
+        </details>
+    </div>
+    <footer>
+        <div class="area">
+         <h3>Learning Courses</h3>
+         <ul>
+            <li><a href="">Learn Python</a></li>
+            <li><a href="">Learn Java</a></li>
+            <li><a href="">Learn C</a></li>
+            <li><a href="">Learn HTML</a></li>
+            <li><a href="">Learn CSS</a></li>
+            <li><a href="">More learning Courses</a></li>
+         </ul>
+        </div>
+        <div class="area">
+            <h3>Practice Paths</h3>
+            <ul>
+               <li><a href="">Practice Python</a></li>
+               <li><a href="">Practice Java</a></li>
+               <li><a href="">Practice C</a></li>
+               <li><a href="">Practice HTML</a></li>
+               <li><a href="">Practice CSS</a></li>
+               <li><a href="">More practice paths</a></li>
+            </ul>
+           </div>
+           <div class="area">
+            <h3>Online Compilers</h3>
+            <ul>
+               <li><a href="">Python online compiler</a></li>
+               <li><a href="">C online compiler</a></li>
+               <li><a href="">c++ online compiler</a></li>
+               <li><a href="">Java online compiler</a></li>
+               <li><a href="">JavaScript online compiler</a></li>
+               <li><a href="">More Compilers</a></li>
+            </ul>
+           </div>
+    </footer>
+    <p id="y">www.codecrafters.com</p>
+    
+    
+    
+    <section class="footer">
+        <h4>Follow Us</h4>
+        
+            <div class="icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-linkedin"></i>
+            </div>
+              <p id="w">Made with <i class="bi bi-heart"></i> by code Crafters</p>
+        </section>
+</body>
+</html>

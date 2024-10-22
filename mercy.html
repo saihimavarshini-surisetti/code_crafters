@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        color: white;
+        background-color: #B0C4DE;
+    }
+    h2{
+        margin-top: 50PX;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        text-shadow: 4px 4px 4px white;
+    }
+    .container {
+        display: flex; 
+        justify-content: space-between; 
+        margin: 20px;
+    }
+    
+    .box {
+        border: 2px solid #333; 
+        padding: 20px;
+        display: inline-block; 
+        width: 25%; 
+        background-color: #f9f9f9; 
+        border-radius: 10px; 
+        text-align: center; 
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s; 
+      
+        margin-left: 140px;
+    
+
+    }
+    h4{
+        color: black;
+        text-align: center;
+    }
+    
+    .box:hover {
+        transform: scale(1.05); 
+    }
+    
+    .logo {
+        width: 80px; 
+        height: auto; 
+    }
+    
+    .box a {
+        text-decoration: none; 
+        color: #007BFF;
+        display: block; 
+        font-size: 18px; 
+        margin-top: 20px;
+    }
+    
+    .description {
+        margin-top: 10px; 
+        font-size: 14px;
+        color: #666;
+    }
+    
+    footer{
+        display:flex;
+       margin-top: 100px;
+       margin-bottom: 10px;
+        background-color: rgb(75, 75, 87);
+       }footer li a
+       {
+        color:white;
+        padding:10px;
+       }h3
+       {
+        color:white;
+       }.area
+       {
+         margin-left: 190px;
+         margin-top: 20px;
+         margin-bottom: 20px;
+       }
+       li a{
+        text-decoration: none;
+       }
+       .last{
+      display: flex;
+       }
+
+       .footer{
+        width: 100;
+        text-align: center;
+        padding: 30px 0;
+     }
+     .footer h4{
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 600;
+     }
+     .icons .bi{
+        color: #f44336;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 18px 0;
+     }
+     .bi-heart{
+        color: #f44336;
+     }
+     p{
+        color: #777;
+     }
+     nav
+     {
+        display:flex;
+     }img
+     {
+        border-radius: 20px;
+     }
+     #logo
+     {
+        display:flex;
+        width:75px;
+        height:75px;
+        margin-top: 10px;
+        padding-left: 10px;
+        
+     }#logo1
+     {
+        display: flex;
+        margin-left: 60px;
+        margin-top: 8px;   
+        font-size: 38px;         
+     }
+     #navbar ul
+     {
+        display:flex;
+        margin-top: 20px;
+        padding-left: 10px;
+     }
+     #navbar li a
+    {
+    border-radius: 8px;
+    padding:10px;
+   margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color:rgb(237, 230, 230);
+   
+
+   }
+   #navbar li a:hover
+    {
+    background-color: black;
+    color:rgb(221, 223, 224);
+   } li
+   {
+    list-style: none;
+   }.search
+   {
+   margin-top: 15px;
+    margin-left: 500px;
+    display: flex;
+    height:40px;
+   
+   }.search input{
+    padding:5px;
+    border-radius: 10px;
+   }
+
+   .aboutus{
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(2, 5, 19, 0.7),rgba(4,9,30,0.7)),url(snaps/mine.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+#x{
+    margin-top: 130px;
+    color: white;
+    font-size: 30px;
+}
+#j{
+    color: white;
+}
+p{
+    text-align: center;
+}
+</style>
+<body>
+
+    <section class="aboutus">
+        <nav id="navbar">
+         <div id="logo">
+           <img src="snaps/main.jpg">
+           </div>
+            <ul>
+               <li class="item"><a href="yamuna.html">Home</a></li>
+               <li class="item"><a href="notes.html">Notes</a></li>
+               <li class="item"><a href="mercy.html">Problems</a></li>
+               <li class="item"><a href="aboutus.html">About Us</a></li>
+               <li class="item"><a href="contactus.html">Contact Us</a></li>
+             </ul>
+           <div class="search">
+               <input type="text" placeholder="Search">
+           </div>
+           <div id="logo1">
+            <a href="login2.html" id="j"><i class="bi bi-person-circle"></i></a>
+           </div>
+      </nav>
+
+   </section>
+
+    <h2>Programming Languages</h2>
+    <div class="container">
+        <div class="box">
+            <a href="c.html"><img src="https://tse3.mm.bing.net/th?id=OIP.bh3GRfq4azYs2T49-QiX7wAAAA&pid=Api&P=0&h=180" alt="C Logo" class="logo">
+                <p class="description">C is a powerful general-purpose language. Improve your C programming skills.<hr>Questions:85</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="java.html"><img src="https://tse1.mm.bing.net/th?id=OIP._LwHf5XIl4G-D2x1RcBP7gHaHa&pid=Api&P=0&h=180" alt="Java Logo" class="logo">
+                <p class="description">Java is widely used for building enterprise-scale applications. Sharpen your Java skills with these practice questiomns.<hr>Questions:70</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="python.html"><img src="https://tse1.mm.bing.net/th?id=OIP.LxoJCJCYSckgxvAcKHJvbAAAAA&pid=Api&P=0&h=180" alt="Python Logo" class="logo"> 
+                <p class="description">Python is a popular language for data science and web development. Get Hands-On with python practice questions.<hr>Questions:80</p>
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <h2>Front-End</h2>
+    <div class="container">
+        <div class="box">
+            <a href="html.html"><img src="https://tse3.mm.bing.net/th?id=OIP.1bnxcVBT_bKoNqP-tLjcpgHaJf&pid=Api&P=0&h=180" alt="HTML logo" class="logo">
+                <p class="description">HTML is a HyperText Markup Language.It provides the structure and layout of a webpage by using elements that represent different types of content.Build your Web Skills.<hr>Questions:70</p>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="css.html"><img src="https://tse1.mm.bing.net/th?id=OIP.vOqfsqyEiDTNybiGwQ3ZAgHaKu&pid=Api&P=0&h=180" alt="CSS logo" class="logo">
+                <p class="description">CSS is Cascading Style Sheets. It is a style sheet language. Sharpen your knowledge with Interactive practice.<hr>Questions:80</p>
+            </a>
+        </div>
+
+        <div class="box">
+            <a href="github.html"><img src="https://tse1.mm.bing.net/th?id=OIP.7DpgyMZTmgfrcLUvZzfqbgHaHa&pid=Api&P=0&h=180" alt="GIT HUB logo" class="logo">
+                <p class="description">GIT HUB is a web-based platform for version control and collaborative software development. Interactive Practice: Boost your understanding.<hr>Quesstions:50</p>
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="area">
+         <h3>Learning Courses</h3>
+         <ul>
+            <li><a href="">Learn Python</a></li>
+            <li><a href="">Learn Java</a></li>
+            <li><a href="">Learn C</a></li>
+            <li><a href="">Learn HTML</a></li>
+            <li><a href="">Learn CSS</a></li>
+            <li><a href="">More learning Courses</a></li>
+         </ul>
+        </div>
+        <div class="area">
+            <h3>Practice Paths</h3>
+            <ul>
+               <li><a href="">Practice Python</a></li>
+               <li><a href="">Practice Java</a></li>
+               <li><a href="">Practice C</a></li>
+               <li><a href="">Practice HTML</a></li>
+               <li><a href="">Practice CSS</a></li>
+               <li><a href="">More practice paths</a></li>
+            </ul>
+           </div>
+           <div class="area">
+            <h3>Online Compilers</h3>
+            <ul>
+               <li><a href="">Python online compiler</a></li>
+               <li><a href="">C online compiler</a></li>
+               <li><a href="">c++ online compiler</a></li>
+               <li><a href="">Java online compiler</a></li>
+               <li><a href="">JavaScript online compiler</a></li>
+               <li><a href="">More Compilers</a></li>
+            </ul>
+           </div>
+    </footer>
+    <p>www.codecrafters.com</p>
+    
+    
+    
+    <section class="footer">
+        <h4>Follow Us</h4>
+        
+            <div class="icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-linkedin"></i>
+            </div>
+              <p id="w">Made with <i class="bi bi-heart"></i> by code Crafters</p>
+        </section>
+</body>
+</html>

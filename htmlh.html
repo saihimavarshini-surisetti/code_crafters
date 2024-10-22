@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #B0C4DE;
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      font-size: 18px;
+      color: #007bff;
+      position: relative;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    label::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+    label:hover::after {
+      width: 100%;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+    input[type="checkbox"]:checked + label + .content {
+      display: block;
+    }
+    h1,h2{
+        color: #2C3E50;
+    }
+    code {
+        background-color: #f4f4f4;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    
+    <h1>HTML notes</h1>
+    <p>
+        HTML, or HyperText Markup Language, is the standard markup language used to create and design web pages and web applications. It structures content on the web by using a series of elements or tags. Here are some key points about HTML:<br><br>
+        Structure: HTML defines the structure of a web page using elements like headings, paragraphs, links, images, lists, and more.<br><br>
+        Tags: HTML is composed of tags that denote different types of content. For example:<br><br>
+        <b>< h1 ></b> to <b>< h6 > </b> for headings<br><br>
+        <b>< p ></p></b> for paragraphs<br><br>
+        <b>< a ></b> for hyperlinks<br><br>
+        <b>< img ></b> for images<br><br>
+        <b>Attributes:</b> Tags can have attributes that provide additional information. For example, the <a> tag can include an href attribute to specify the URL of the link.<br><br>
+        <b>Hierarchy:</b> HTML documents are structured hierarchically, with nested elements. The basic structure of an HTML document includes:<br><br>
+        <b>< !DOCTYPE html >:</b> Declaration to specify the document type.<br><br>
+        <b>< html >:</b> Root element that wraps the entire content.<br><br>
+        <b>< head >:</b> Contains meta-information, links to stylesheets, and scripts.<br><br>
+        <b>< body >:</b> Contains the content displayed on the web page.<br><br>
+        <b>Semantics:</b> HTML5 introduced semantic elements that clearly describe their meaning in a human- and machine-readable way, like <b>< article >, < section >, < header >,</b> and <b>< footer></b>.<br><br>
+        <b>Rendering:</b> Browsers interpret HTML to display web pages visually, allowing users to interact with the content.
+    </p><br><br>
+    <input type="checkbox" id="topic1">
+    <label for="topic1">HTML Structure</label>
+    <div class="content">
+        <p><strong>HTML (HyperText Markup Language)</strong>: The standard language for creating web pages.</p>
+        <p><strong>Purpose</strong>: To structure web content using tags and elements.</p>
+
+        <h2>Basic Structure of an HTML Document</h2>
+        <p>Every HTML file has a basic structure:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt; &lt;!-- Defines the document type --&gt;
+            &lt;html&gt; &lt;!-- Root element of the document --&gt;
+            &lt;head&gt; &lt;!-- Contains meta-information like title, styles, etc. --&gt;
+                &lt;title&gt;Page Title&lt;/title&gt; &lt;!-- Title of the web page shown in browser tab --&gt;
+            &lt;/head&gt;
+            &lt;body&gt; &lt;!-- The content of the page that is visible in the browser --&gt;
+                &lt;h1&gt;This is a Heading&lt;/h1&gt; &lt;!-- Heading element --&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt; &lt;!-- Paragraph element --&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic2">
+    <label for="topic2">Elements and Tags</label>
+    <div class="content">
+        <h2>HTML Elements</h2>
+        <p>An <strong>HTML element</strong> consists of an opening tag, content (if applicable), and a closing tag. It defines the structure and content of a webpage.</p>
+        <ul>
+            <li><strong>Opening Tag</strong>: Marks the start of the element (e.g., &lt;p&gt;).</li>
+            <li><strong>Content</strong>: Text or nested HTML elements inside the opening and closing tags.</li>
+            <li><strong>Closing Tag</strong>: Marks the end of the element (e.g., &lt;/p&gt;).</li>
+        </ul>
+
+        <h3>Example:</h3>
+        <pre>
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+        </pre>
+
+        <h2>HTML Tags</h2>
+        <p>HTML tags are the building blocks of elements. Tags are written inside angle brackets (&lt; &gt;) and often come in pairs: an opening tag and a closing tag.</p>
+
+        <h3>Types of Tags:</h3>
+        <ul>
+            <li><strong>Paired Tags</strong>: Most elements use paired tags with an opening and closing tag.</li>
+            <pre>&lt;h1&gt;Main Heading&lt;/h1&gt;</pre>
+
+            <li><strong>Self-closing Tags</strong>: Tags that do not need a closing tag (e.g., &lt;img&gt;).</li>
+            <pre>&lt;img src=image.jpg alt=Image&gt;</pre>
+        </ul>
+
+        <h2>Common HTML Elements and Tags</h2>
+        <ul>
+            <li><strong>Headings</strong>: &lt;h1&gt; to &lt;h6&gt;</li>
+            <pre>&lt;h1&gt;Main Heading&lt;/h1&gt;</pre>
+
+            <li><strong>Paragraphs</strong>: &lt;p&gt;</li>
+            <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+
+            <li><strong>Links</strong>: &lt;a&gt;</li>
+            <pre>&lt;a href=https://example.com&gt;Visit&lt;/a&gt;</pre>
+
+            <li><strong>Images</strong>: &lt;img&gt;</li>
+            <pre>&lt;img src=logo.png alt=Logo&gt;</pre>
+
+            <li><strong>Lists</strong>:</li>
+            <ul>
+                <li><strong>Unordered List</strong>: &lt;ul&gt;</li>
+                <li><strong>Ordered List</strong>: &lt;ol&gt;</li>
+            </ul>
+            <pre>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ul&gt;</pre>
+        </ul>
+
+        <h2>Attributes</h2>
+        <p>Attributes provide additional information about elements, written inside the opening tag.</p>
+        <pre>&lt;a href=https://example.com&gt;Link&lt;/a&gt;</pre>
+        <p><strong>href</strong>: Specifies the link destination.</p>
+
+        <h2>Self-closing Elements</h2>
+        <p>These elements don't need closing tags.</p>
+        <ul>
+            <li>&lt;img&gt;</li>
+            <li>&lt;br&gt;</li>
+            <li>&lt;hr&gt;</li>
+        </ul>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic3">
+    <label for="topic3">Attributes</label>
+    <div class="content">
+        <h2>What are HTML Attributes?</h2>
+        <p><strong>HTML attributes</strong> provide additional information about HTML elements. They modify behavior, define properties, and enhance functionality.</p>
+
+        <h3>Key Points:</h3>
+        <ul>
+            <li>Attributes are always included in the <strong>opening tag</strong>.</li>
+            <li>They follow the syntax: <code>name="value"</code>.</li>
+            <li>Most HTML elements can have attributes.</li>
+        </ul>
+
+        <h2>Common HTML Attributes</h2>
+        <ul>
+            <li><strong>href</strong> (for links): Specifies the URL of the linked document.</li>
+            <pre>&lt;a href=https://www.example.com\&gt;Visit Example&lt;/a&gt;</pre>
+
+            <li><strong>src</strong> (for images): Specifies the path to the image file.</li>
+            <pre>&lt;img src=image.jpg alt=Description of the image&gt;</pre>
+
+            <li><strong>alt</strong> (for images): Provides alternative text for an image.</li>
+            <pre>&lt;img src=logo.png alt=Company Logo&gt;</pre>
+
+            <li><strong>id</strong>: Specifies a unique identifier for an element.</li>
+            <pre>&lt;h1 id=main-heading&gt;Welcome&lt;/h1&gt;</pre>
+
+            <li><strong>class</strong>: Specifies one or more class names for an element.</li>
+            <pre>&lt;p class=intro-text&gt;This is a paragraph.&lt;/p&gt;</pre>
+
+            <li><strong>style</strong>: Specifies inline CSS styles for an element.</li>
+            <pre>&lt;p style=color: blue; font-size: 20px;&gt;This is styled text.&lt;/p&gt;</pre>
+
+            <li><strong>title</strong>: Adds a tooltip when hovering over an element.</li>
+            <pre>&lt;a href=https://example.com title=Visit Example Website&gt;Example&lt;/a&gt;</pre>
+
+            <li><strong>target</strong> (for links): Specifies where to open the linked document.</li>
+            <pre>&lt;a href=https://example.com target=_blank&gt;Open in new tab&lt;/a&gt;</pre>
+        </ul>
+
+        <h2>Global Attributes</h2>
+        <p>These attributes can be applied to any HTML element:</p>
+        <ul>
+            <li><strong>id</strong>: Unique identifier for an element.</li>
+            <li><strong>class</strong>: Specifies one or more class names.</li>
+            <li><strong>style</strong>: Adds inline styles.</li>
+            <li><strong>title</strong>: Adds a tooltip on hover.</li>
+            <li><strong>data-*</strong>: Custom data attributes for storing extra data.</li>
+        </ul>
+        <pre>&lt;div data-info=custom-data&gt;Content&lt;/div&gt;</pre>
+
+        <h2>Boolean Attributes</h2>
+        <p>Boolean attributes do not need a value; their presence is enough to set them to true.</p>
+        <ul>
+            <li><strong>disabled</strong> (for form elements):</li>
+            <pre>&lt;input type=text disabled&gt;</pre>
+
+            <li><strong>checked</strong> (for checkboxes and radio buttons):</li>
+            <pre>&lt;input type=checkbox checked&gt;</pre>
+        </ul>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic4">
+    <label for="topic4">Forms</label>
+    <div class="content">
+        <h2>What are HTML Forms?</h2>
+        <p>An <strong>HTML form</strong> is used to collect user input and submit it to a server for processing. Forms are essential for creating interactive features like search bars, login pages, or feedback forms.</p>
+
+        <h3>Key Elements of a Form:</h3>
+        <ul>
+            <li><strong>&lt;form&gt;</strong>: The container for form elements.</li>
+            <li><strong>&lt;input&gt;</strong>: A versatile element used to capture user data (e.g., text, passwords, buttons).</li>
+            <li><strong>&lt;textarea&gt;</strong>: A multi-line input field.</li>
+            <li><strong>&lt;select&gt;</strong>: A dropdown list for selecting options.</li>
+            <li><strong>&lt;button&gt;</strong>: Used to submit or reset form data.</li>
+        </ul>
+
+        <h2>Basic Form Structure</h2>
+        <pre>
+            &lt;form action=/submit method=POST&gt;
+                &lt;!-- Form fields go here --&gt;
+            &lt;/form&gt;
+        </pre>
+        <p><strong>action</strong>: Specifies the URL where form data is sent.</p>
+        <p><strong>method</strong>: Specifies how data is sent (e.g., <code>GET</code> or <code>POST</code>).</p>
+
+        <h2>Form Input Types</h2>
+        <ul>
+            <li><strong>Text Input</strong>: Used for single-line text inputs.</li>
+            <pre>&lt;input type=text name=username&gt;</pre>
+
+            <li><strong>Password Input</strong>: Masks the input for password fields.</li>
+            <pre>&lt;input type=password name=password&gt;</pre>
+
+            <li><strong>Radio Buttons</strong>: Allows the user to select one option from a group.</li>
+            <pre>&lt;input type=radio name=gender value=male&gt; Male
+    &lt;input type=radi name=gender value=female&gt; Female</pre>
+
+            <li><strong>Checkboxes</strong>: Allows multiple selections.</li>
+            <pre>&lt;input type=checkbox name=subscribe value=newsletter&gt; Subscribe to newsletter</pre>
+
+            <li><strong>Submit Button</strong>: Sends form data to the server.</li>
+            <pre>&lt;input type=submit value=Submit&gt;</pre>
+        </ul>
+
+        <h2>Textarea</h2>
+        <p>For multi-line text input, use the <strong>&lt;textarea&gt;</strong> tag.</p>
+        <pre>&lt;textarea name=comments rows=4 cols=50;&gt;&lt;/textarea&gt;</pre>
+
+        <h2>Select Dropdown</h2>
+        <p>The <strong>&lt;select&gt;</strong> element allows the user to select one or more options from a dropdown list.</p>
+        <pre>
+            &lt;select name=country&gt;
+                &lt;option value=usa&gt;USA&lt;/option&gt;
+                &lt;option value=canada&gt;Canada&lt;/option&gt;
+            &lt;/select&gt;
+        </pre>
+
+        <h2>Labels</h2>
+        <p>The <strong>&lt;label&gt;</strong> element provides a clickable label for form controls, improving accessibility.</p>
+        <pre>
+            &lt;label for=username&gt;Username:&lt;/label&gt;
+            &lt;input type=text id=username name=username&gt;
+        </pre>
+
+        <h2>Form Validation</h2>
+        <p>HTML5 includes built-in validation attributes that help ensure data is correctly entered before submission.</p>
+        <ul>
+            <li><strong>required</strong>: Ensures the field is filled out.</li>
+            <pre>&lt;input type=text name=email required&gt;</pre>
+
+            <li><strong>pattern</strong>: Validates the input against a regular expression.</li>
+            <pre>&lt;input type=text name=phone pattern=[0-9]{10}&gt;</pre>
+
+            <li><strong>min</strong> and <strong>max</strong>: Define numeric range constraints.</li>
+            <pre>&lt;input type=number name=age min=18 max=100&gt;</pre>
+        </ul>
+
+        <h2>File Upload</h2>
+        <p>The <strong>&lt;input type=file&gt;</strong> allows users to upload files.</p>
+        <pre>&lt;input type=file&quot; name=resume&gt;</pre>
+
+        <h2>Form Methods</h2>
+        <ul>
+            <li><strong>GET</strong>: Sends form data appended to the URL (used for search forms).</li>
+            <pre>&lt;form action=/search method=GET&gt;&lt;/form&gt;</pre>
+
+            <li><strong>POST</strong>: Sends form data as a separate HTTP request (used for sensitive data like login forms).</li>
+            <pre>&lt;form action=/login method=POST&gt;&lt;/form&gt;</pre>
+        </ul>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic5">
+    <label for="topic5">Tables</label>
+    <div class="content">
+        <h1>HTML Tables</h1>
+
+        <h2>What are HTML Tables?</h2>
+        <p>An <strong>HTML table</strong> is used to display data in a structured format, consisting of rows and columns. Tables are useful for presenting tabular data such as schedules, comparisons, or statistics.</p>
+
+        <h3>Key Elements of a Table:</h3>
+        <ul>
+            <li><strong>&lt;table&gt;</strong>: The container for the entire table.</li>
+            <li><strong>&lt;tr&gt;</strong>: Represents a table row.</li>
+            <li><strong>&lt;th&gt;</strong>: Represents a table header cell (usually bold and centered).</li>
+            <li><strong>&lt;td&gt;</strong>: Represents a table data cell (regular data).</li>
+        </ul>
+
+        <h2>Basic Table Structure</h2>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Header 1&lt;/th&gt;
+                    &lt;th&gt;Header 2&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Data 1&lt;/td&gt;
+                    &lt;td&gt;Data 2&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+
+        <h2>Attributes of Tables</h2>
+        <ul>
+            <li><strong>border</strong>: Specifies the border size of the table (deprecated in HTML5, use CSS instead).</li>
+            <li><strong>cellspacing</strong>: Defines the space between cells (deprecated in HTML5, use CSS instead).</li>
+            <li><strong>cellpadding</strong>: Defines the space between the cell border and its content (deprecated in HTML5, use CSS instead).</li>
+            <li><strong>width</strong>: Sets the width of the table (use CSS for styling).</li>
+        </ul>
+
+        <h2>Table Example</h2>
+        <pre>
+            &lt;table border=1&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                    &lt;th&gt;City&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;John&lt;/td&gt;
+                    &lt;td&gt;25&lt;/td&gt;
+                    &lt;td&gt;New York&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Mary&lt;/td&gt;
+                    &lt;td&gt;30&lt;/td&gt;
+                    &lt;td&gt;Los Angeles&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+
+        <h2>Spanning Rows and Columns</h2>
+        <ul>
+            <li><strong>Row Span</strong>: Use the <code>rowspan</code> attribute to make a cell span multiple rows.</li>
+            <pre>&lt;td rowspan=2&gt;Spanning Cell&lt;/td&gt;</pre>
+
+            <li><strong>Column Span</strong>: Use the <code>colspan</code> attribute to make a cell span multiple columns.</li>
+            <pre>&lt;td colspan=2&gt;Spanning Cell&lt;/td&gt;</pre>
+        </ul>
+
+        <h2>Table Caption</h2>
+        <p>The <strong>&lt;caption&gt;</strong> element provides a title or description for the table.</p>
+        <pre>
+            &lt;table&gt;
+                &lt;caption&gt;Employee Data&lt;/caption&gt;
+                ...
+            &lt;/table&gt;
+        </pre>
+
+        <h2>Styling Tables</h2>
+        <p>CSS can be used to style tables for better presentation.</p>
+        <pre>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+        </pre>
+
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic6">
+    <label for="topic6">Semantic HTML</label>
+    <div class="content">
+        <h2>What is Semantic HTML?</h2>
+        <p><strong>Semantic HTML</strong> refers to the use of HTML markup that conveys meaning about the content it contains. This approach improves the accessibility and searchability of web pages by helping browsers and search engines understand the structure and context of the content.</p>
+
+        <h2>Why Use Semantic HTML?</h2>
+        <ul>
+            <li><strong>Accessibility</strong>: Enhances the experience for users with disabilities by allowing screen readers to interpret the content correctly.</li>
+            <li><strong>SEO Benefits</strong>: Improves search engine optimization (SEO) by helping search engines better understand the content.</li>
+            <li><strong>Maintainability</strong>: Makes code easier to read and maintain by providing clear and descriptive elements.</li>
+            <li><strong>Browser Compatibility</strong>: Helps browsers render the content more accurately.</li>
+        </ul>
+
+        <h2>Common Semantic HTML Elements</h2>
+
+        <h3>&lt;header&gt;</h3>
+        <p>Represents introductory content, typically containing navigational links or logos.</p>
+        <pre>
+            &lt;header&gt;
+                &lt;h1&gt;Website Title&lt;/h1&gt;
+                &lt;nav&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=#home&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=;#about&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+        </pre>
+
+        <h3>&lt;nav&gt;</h3>
+        <p>Represents a section of navigation links.</p>
+        <pre>
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=#services&gt;Services&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=#contact&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        </pre>
+
+        <h3>&lt;main&gt;</h3>
+        <p>Represents the main content of the document, excluding headers, footers, and sidebars.</p>
+        <pre>
+            &lt;main&gt;
+                &lt;h2&gt;Main Content Heading&lt;/h2&gt;
+                &lt;p&gt;This is the main content of the page.&lt;/p&gt;
+            &lt;/main&gt;
+        </pre>
+
+        <h3>&lt;section&gt;</h3>
+        <p>Represents a thematic grouping of content, typically with a heading.</p>
+        <pre>
+            &lt;section&gt;
+                &lt;h2&gt;About Us&lt;/h2&gt;
+                &lt;p&gt;Details about the organization.&lt;/p&gt;
+            &lt;/section&gt;
+        </pre>
+
+        <h3>&lt;article&gt;</h3>
+        <p>Represents a self-contained piece of content, like a blog post or news article.</p>
+        <pre>
+            &lt;article&gt;
+                &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+                &lt;p&gt;This is the content of the blog post.&lt;/p&gt;
+            &lt;/article&gt;
+        </pre>
+
+        <h3>&lt;aside&gt;</h3>
+        <p>Represents content that is related to the main content but is separate, like a sidebar or a pull quote.</p>
+        <pre>
+            &lt;aside&gt;
+                &lt;h3&gt;Related Links&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=#link1&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=#link2&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/aside&gt;
+        </pre>
+
+        <h3>&lt;footer&gt;</h3>
+        <p>Represents the footer of a section or page, typically containing authorship information, copyright, or links to related documents.</p>
+        <pre>
+            &lt;footer&gt;
+                &lt;p&gt;&copy; 2024 Company Name. All rights reserved.&lt;/p&gt;
+            &lt;/footer&gt;
+        </pre>
+
+        <h2>Using Semantic HTML with CSS</h2>
+        <p>Semantic HTML can be styled using CSS, just like traditional HTML elements. Using semantic elements helps to maintain a clear structure in your code.</p>
+
+        <h3>Example:</h3>
+        <pre>
+            header {
+                background-color: #f8f9fa;
+                padding: 10px;
+            }
+
+            nav ul {
+                list-style-type: none;
+            }
+
+            main {
+                margin: 20px;
+            }
+        </pre>
+    </div>
+    <br><br>
+    <input type="checkbox" id="topic7">
+    <label for="topic7">Multimedia</label>
+    <div class="content">
+        <p><strong>Multimedia</strong> in HTML refers to the integration of various forms of media content, such as images, audio, video, and animations, into web pages. HTML provides several elements to embed and manage multimedia effectively.</p>
+
+        <h2>Types of Multimedia Elements in HTML</h2>
+
+        <h3>1. Images</h3>
+        <p>Used to display graphics and photos on web pages.</p>
+        <p><strong>Element:</strong> <code>&lt;img&gt;</code></p>
+        <p><strong>Attributes:</strong></p>
+        <ul>
+            <li><code>src</code>: Specifies the image source (URL or file path).</li>
+            <li><code>alt</code>: Provides alternative text for the image (important for accessibility).</li>
+            <li><code>width</code> and <code>height</code>: Set the dimensions of the image.</li>
+        </ul>
+        <pre>
+            &lt;img src="image.jpg" alt="Description of image" width="300" height="200"&gt;
+        </pre>
+
+        <h3>2. Audio</h3>
+        <p>Used to embed sound content, such as music or voice recordings.</p>
+        <p><strong>Element:</strong> <code>&lt;audio&gt;</code></p>
+        <p><strong>Attributes:</strong></p>
+        <ul>
+            <li><code>controls</code>: Adds playback controls (play, pause, volume).</li>
+            <li><code>autoplay</code>: Starts playing the audio automatically (optional).</li>
+            <li><code>loop</code>: Repeats the audio playback (optional).</li>
+        </ul>
+        <pre>
+            &lt;audio controls&gt;
+                &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                Your browser does not support the audio element.
+            &lt;/audio&gt;
+        </pre>
+
+        <h3>3. Video</h3>
+        <p>Used to embed video content.</p>
+        <p><strong>Element:</strong> <code>&lt;video&gt;</code></p>
+        <p><strong>Attributes:</strong></p>
+        <ul>
+            <li><code>controls</code>: Adds playback controls.</li>
+            <li><code>autoplay</code>: Starts playing the video automatically (optional).</li>
+            <li><code>loop</code>: Repeats the video playback (optional).</li>
+            <li><code>width</code> and <code>height</code>: Set the dimensions of the video.</li>
+        </ul>
+        <pre>
+            &lt;video controls width="400"&gt;
+                &lt;source src="video.mp4" type="video/mp4"&gt;
+                Your browser does not support the video tag.
+            &lt;/video&gt;
+        </pre>
+
+        <h3>4. Embedded Content</h3>
+        <p>Used to embed external content such as maps or documents.</p>
+        <p><strong>Element:</strong> <code>&lt;iframe&gt;</code></p>
+        <p><strong>Attributes:</strong></p>
+        <ul>
+            <li><code>src</code>: Specifies the URL of the page to embed.</li>
+            <li><code>width</code> and <code>height</code>: Set the dimensions of the iframe.</li>
+            <li><code>allowfullscreen</code>: Allows the iframe to be displayed in fullscreen mode.</li>
+        </ul>
+        <pre>
+            &lt;iframe src="https://www.example.com" width="600" height="400" allowfullscreen&gt;&lt;/iframe&gt;
+        </pre>
+
+        <h3>5. Canvas</h3>
+        <p>A drawable region in HTML for graphics and animations using JavaScript.</p>
+        <p><strong>Element:</strong> <code>&lt;canvas&gt;</code></p>
+        <p><strong>Attributes:</strong></p>
+        <ul>
+            <li><code>width</code> and <code>height</code>: Set the dimensions of the canvas.</li>
+        </ul>
+        <pre>
+            &lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+        </pre>
+    </div>
+    <br><br>
+</body>
+</html>
